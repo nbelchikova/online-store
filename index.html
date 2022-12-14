@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap" rel="stylesheet">
+    <title>Online-store</title>
+</head>
+<body>
+    <header class="header">
+        <div class="wrapper wrapper-header"></div>
+    </header>
+    <main class="main">
+        <div class="wrapper wrapper-main">
+            <section class="goods">
+                <img src="./goods.PNG" alt="goods" class="goods_img">
+            </section>
+            <section class="slider">
+                <div class="array-left">
+                    <img src="./left.png" alt="array-left" class="array-left_img">
+                </div>
+                <div class="array-right">
+                    <img src="./right.png" alt="array-right" class="array-right_img">
+                </div>
+                <div class="slider_items">
+                    <img src="./slide1.jpg" alt="slider_items" class="slider_items_img slider_items_img-active">
+                    <img src="./slide2.png" alt="slider_items" class="slider_items_img">
+                    <img src="./slide3.jpg" alt="slider_items" class="slider_items_img">
+                    <img src="./slide4.jpg" alt="slider_items" class="slider_items_img">
+                    <img src="./slide5.png" alt="slider_items" class="slider_items_img">
+                    <img src="./slide6.jpg" alt="slider_items" class="slider_items_img">
+                    <img src="./slide7.jpg" alt="slider_items" class="slider_items_img">
+                    <img src="./slide8.jpg" alt="slider_items" class="slider_items_img">
+                    <img src="./slide9.jpg" alt="slider_items" class="slider_items_img">
+                </div>
+            </section>
+            <section class="shop">
+                <div class="shop_filter">
+                    <h3 class="shop_filter_title">Фильтр</h3>
+                    <form class='shop_filter_category' id="form1" action="">
+                        <p class="p_filter" id="category">Категория</p>
+                        <input type="radio" id="tree" name="answer" value="tree" >
+                        <label for="tree" id="tree-label">Искусственные елки</label>
+                        <br>
+                        <input type="radio" id="ballon" name="answer" value="ballon" >
+                        <label for="ballon" id="ballon-label">Пластиковые и стеклянные шары</label>
+                        <br>
+                        <input type="radio" id="Electrolight" name="answer" value="Electrolight" >
+                        <label for="Electrolight" id="Electrolight-label">Электрогирлянды</label>
+                        <br>
+                        <input type="radio" id="decoration" name="answer" value="decoration" >
+                        <label for="decoration" id="decoration-label">Световой декор</label>
+                        <br>
+                        <input type="radio" id="costumes" name="answer" value="costumes" >
+                        <label for="costumes" id="costumes-label">Карнавальные костюмы</label>
+                    </form>
+                    <form class='shop_filter_brand' id="form2" action="">
+                        <p class="p_filter" id="brand">Brand</p>
+                        <input type="radio" id="Beatrees" name="answer" value="Beatrees" >
+                        <label for="Beatrees" id="Beatrees-label">Beatrees</label>
+                        <br>
+                        <input type="radio" id="Boltze" name="answer" value="Boltze" >
+                        <label for="Boltze" id="Boltze-label">Boltze</label>
+                        <br>
+                        <input type="radio" id="Bondibon" name="answer" value="Bondibon" >
+                        <label for="Bondibon" id="Bondibon-label">Bondibon</label>
+                        <br>
+                        <input type="radio" id="Breitner" name="answer" value="Breitner" >
+                        <label for="Breitner" id="Breitner-label">Breitner</label>
+                        <br>
+                        <input type="radio" id="Edelman" name="answer" value="Edelman" >
+                        <label for="Edelman" id="Edelman-label">Edelman</label>
+                    </form>
+                    <form class='shop_filter_cost' id="form3" action="">
+                        <p class="p_filter" id="cost">Стоимость</p>
+                        <input type="radio" id="cost500" name="answer" value="cost500" >
+                        <label for="cost500" id="cost500-label">0-500</label>
+                        <br>
+                        <input type="radio" id="cost1000" name="answer" value="cost1000" >
+                        <label for="cost1000" id="cost1000-label">500-1000</label>
+                        <br>
+                        <input type="radio" id="cost3000" name="answer" value="cost3000" >
+                        <label for="cost3000" id="cost3000-label">1000-3000</label>
+                        <br>
+                        <input type="radio" id="cost5000" name="answer" value="cost5000" >
+                        <label for="cost5000" id="cost5000">3000-5000</label>
+                        <br>
+                        <input type="radio" id="cost10000" name="answer" value="cost10000" >
+                        <label for="cost10000" id="cost10000-label">5000-10000</label>
+                    </form>
+                    <button class="btn btn-filter" id="formButton">Выбрать</button>
+                </div>
+                <div class="shop_items">
+                    <form class="cost-filter">
+                        <select name="costfilter">
+                            <option value="1">Не выбрано</option>
+                            <option value="2">По возрастанию</option>
+                            <option value="3">По убыванию</option>
+                          </select>
+                    </form>
+
+                </div>
+            </section>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="wrapper wrapper-footer">
+            <ul class="footer_list">
+                <li class="footer_list_item">
+                    <a href="https://github.com/nbelchikova">Olga</a>
+                </li>
+                <li class="footer_list_item">
+                  <a href="https://github.com/Kunitsa3">Natalia</a>
+              </li>
+                <li class="footer_list_item">
+                    <a href="">2022</a>
+                </li>
+                <li class="footer_list_item">
+                    <img src="./rs.png" alt="logo">
+                </li>
+                <li class="footer_list_item">
+                    <a href="https://rs.school/js/">Link</a>
+                </li>
+            </ul>
+        </div>
+    </footer>
+</body>
+</html>
