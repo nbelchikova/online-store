@@ -343,4 +343,3 @@ export const itemsData: IGoods[] = [
         warehouse: 14,
       }
 ]
-
