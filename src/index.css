@@ -5,7 +5,7 @@ html {
   background-size: cover;
   font-size: 20px;
   box-sizing: border-box;
-  font-family: "Lato", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: 'Lora', serif;
 }
 .wrapper {
   max-width: 1100px;
@@ -72,18 +72,19 @@ html {
 .shop_filter {
   width: 370px;
   border: #36B0CB 2px solid;
-  height: auto;
+  height: 500px;
   margin-right: 30px;
   border-radius: 10px;
+  padding-left: 20px;
 }
 .shop_items {
   width: 700px;
   border: #36B0CB 2px solid;
-  height: 500px;
+  height: auto;
   border-radius: 10px;
 }
 .shop_filter_title {
-  font-size: 30px;
+  font-size: 20px;
   color:#36B0CB;
   text-align: center;
   margin-bottom: 10px;
@@ -92,8 +93,7 @@ html {
   margin-bottom: 10px;
   margin-top: 10px;
 }
-.btn-filter {
-  display: block;
+.btn {
   margin: 30px auto 30px auto;
   background-color: #36B0CB;
   color: white;
@@ -107,4 +107,38 @@ html {
 .form {
   display: flex;
   flex-direction: column;
+  font-size: 15px;
+}
+.good-items {
+  margin-top: 30px;
+  display: flex;
+  width:700px;
+  flex-wrap: wrap;
+}
+.good-items_info {
+  width: 326px;
+  border: #36B0CB 2px solid;
+  height: 300px;
+  margin-right: 10px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
+.info-title {
+  text-align: center;
+  text-decoration: underline;
+  color: #36B0CB;
+}
+.info-column {
+  display: flex;
+  margin-top: 20px;
+  font-size: 15px;
+
+}
+.info-column_image img {
+  width: 150px;
+  margin-right: 20px;
+  margin-left: 10px;
+}
+.info-btn {
+  display: flex;
 }
