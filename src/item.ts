@@ -1,3 +1,4 @@
+
 export interface IGoods {
     id: number;
     name: string;
@@ -341,5 +342,5 @@ export const itemsData: IGoods[] = [
         cost: 330,
         warehouse: 14,
       }
+]
 
-  ];
