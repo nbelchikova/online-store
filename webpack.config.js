@@ -10,9 +10,9 @@ const baseConfig = {
   devtool: 'source-map',
   mode: 'development',
   entry: {
-    index: './src/index.ts',
-    shoppingCart: './src/shoppingCart.ts',
-    goods: './src/goods.ts',
+    index: './src/pages/homepage/index.ts',
+    shoppingCart: './src/pages/cart/shoppingCart.ts',
+    goods: './src/pages/goods/goods.ts',
   },
   output: {
     filename: '[name].[contenthash].js',
@@ -40,50 +40,49 @@ const baseConfig = {
       },
       {
         test: /\.s[ac]ss$/i,
-        use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader']
-      }
+        use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
+      },
     ],
   },
   plugins: [
     new MiniCssExtractPlugin({ filename: '[name].[contenthash].css' }),
     new HtmlWebpackPlugin({
-      template: 'index.html',
-      filename:'index.html',
+      template: './src/pages/homepage/index.html',
+      filename: 'index.html',
       chunks: ['index'],
       inject: 'body',
       minify: false,
-      scriptLoading: "blocking"
-
-  }),
-  new HtmlWebpackPlugin({
-      template: 'shoppingCart.html',
-      filename:'shoppingCart.html',
+      scriptLoading: 'blocking',
+    }),
+    new HtmlWebpackPlugin({
+      template: './src/pages/cart/shoppingCart.html',
+      filename: 'shoppingCart.html',
       chunks: ['shoppingCart'],
       inject: 'body',
       minify: false,
-      scriptLoading: "blocking"
-
-  }),
-  new HtmlWebpackPlugin({
-      template: 'goods.html',
-      filename:'goods.html',
+      scriptLoading: 'blocking',
+    }),
+    new HtmlWebpackPlugin({
+      template: './src/pages/goods/goods.html',
+      filename: 'goods.html',
       chunks: ['goods'],
       inject: 'body',
       minify: false,
-      scriptLoading: "blocking"
-
-  }),
+      scriptLoading: 'blocking',
+    }),
     new CopyPlugin({
-      patterns: [{
-        from: 'public',
-        noErrorOnMissing: true,
-      }],
+      patterns: [
+        {
+          from: 'public',
+          noErrorOnMissing: true,
+        },
+      ],
     }),
     new CleanWebpackPlugin({ cleanStaleWebpackAssets: false }),
   ],
   resolve: {
     extensions: ['.ts', '.js'],
-  }
+  },
 };
 module.exports = ({ mode }) => {
   const isProductionMode = mode === 'prod';
