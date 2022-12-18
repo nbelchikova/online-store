@@ -6,40 +6,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&family=Rochester&display=swap"
+      rel="stylesheet"
+    />
     <title>Online-store</title>
   </head>
   <body>
     <header class="header">
-      <div class="wrapper wrapper-header"></div>
+      <div class="header-logo">
+        <img class="header-logo-image" src="./header/christmas-ball.png" alt="christmas-ball" />
+      </div>
+      <p class="header-logo-text">Online shop</p>
+      <div class="header-cart">
+        <img class="header-cart-image" src="./header/cart.png" alt="christmas-cart" />
+        <div class="header-cart-quantity">1</div>
+      </div>
     </header>
     <main class="main">
       <div class="wrapper wrapper-main">
         <section class="slider">
           <div class="array-left">
-            <img src="./left.png" alt="array-left" class="array-left_img" />
+            <img src="./left.png" alt="array-left" class="array-left-img" />
           </div>
           <div class="array-right">
-            <img src="./right.png" alt="array-right" class="array-right_img" />
+            <img src="./right.png" alt="array-right" class="array-right-img" />
           </div>
-          <div class="slider_items">
-            <img src="./slide1.jpg" alt="slider_items" class="slider_items_img" />
-            <img src="./slide2.png" alt="slider_items" class="slider_items_img" />
-            <img src="./slide3.jpg" alt="slider_items" class="slider_items_img" />
-            <img src="./slide4.jpg" alt="slider_items" class="slider_items_img" />
-            <img src="./slide5.png" alt="slider_items" class="slider_items_img" />
-            <img src="./slide6.jpg" alt="slider_items" class="slider_items_img" />
-            <img src="./slide7.jpg" alt="slider_items" class="slider_items_img" />
-            <img src="./slide8.jpg" alt="slider_items" class="slider_items_img" />
-            <img src="./slide9.jpg" alt="slider_items" class="slider_items_img" />
+          <div class="slider-items">
+            <img src="./slide1.jpg" alt="slider-items" class="slider-items-img" />
+            <img src="./slide2.png" alt="slider-items" class="slider-items-img" />
+            <img src="./slide3.jpg" alt="slider-items" class="slider-items-img" />
+            <img src="./slide4.jpg" alt="slider-items" class="slider-items-img" />
+            <img src="./slide5.png" alt="slider-items" class="slider-items-img" />
+            <img src="./slide6.jpg" alt="slider-items" class="slider-items-img" />
+            <img src="./slide7.jpg" alt="slider-items" class="slider-items-img" />
+            <img src="./slide8.jpg" alt="slider-items" class="slider-items-img" />
+            <img src="./slide9.jpg" alt="slider-items" class="slider-items-img" />
           </div>
         </section>
         <section class="shop">
-          <a href="./goods.html">Ссылка</a>
-          <div class="shop_filter">
-            <h3 class="shop_filter_title">Фильтр</h3>
-            <form class="form shop_filter_category" id="form1" action="">
-              <p class="p_filter" id="category">Категория</p>
+          <div class="shop-filter">
+            <h3 class="shop-filter-title">Фильтр</h3>
+            <form class="form shop-filter-category" id="form1" action="">
+              <p class="p-filter" id="category">Категория</p>
               <label for="tree" id="tree-label">
                 <input type="radio" id="tree" name="answer" value="tree" />Искусственные елки</label
               >
@@ -56,8 +65,8 @@
                 <input type="radio" id="costumes" name="answer" value="costumes" />Карнавальные костюмы</label
               >
             </form>
-            <form class="form shop_filter_brand" id="form2" action="">
-              <p class="p_filter" id="brand">Brand</p>
+            <form class="form shop-filter-brand" id="form2" action="">
+              <p class="p-filter" id="brand">Brand</p>
               <label for="Beatrees" id="Beatrees-label">
                 <input type="radio" id="Beatrees" name="answer" value="Beatrees" />Beatrees</label
               >
@@ -74,8 +83,8 @@
                 <input type="radio" id="Edelman" name="answer" value="Edelman" />Edelman</label
               >
             </form>
-            <form class="form shop_filter_cost" id="form3" action="">
-              <p class="p_filter" id="cost">Стоимость</p>
+            <form class="form shop-filter-cost" id="form3" action="">
+              <p class="p-filter" id="cost">Стоимость</p>
               <label for="cost500" id="cost500-label">
                 <input type="radio" id="cost500" name="answer" value="cost500" />0-500</label
               >
@@ -94,7 +103,7 @@
             </form>
             <button class="btn btn-filter" id="formButton">Выбрать</button>
           </div>
-          <div class="shop_items">
+          <div class="shop-items">
             <form class="cost-filter">
               <select name="costfilter">
                 <option value="1">Не выбрано</option>
@@ -103,11 +112,11 @@
               </select>
             </form>
             <div class="good-items">
-              <div class="good-items_info">
+              <div class="good-items-info">
                 <h3 class="info-title">Настольная голубая елка в мешочке Верона 60 см</h3>
                 <div class="info-column">
-                  <div class="info-column_image"><img src="./id1.jpg" alt="goods" /></div>
-                  <div class="info-column_details">
+                  <div class="info-column-image"><img src="./id1.jpg" alt="goods" /></div>
+                  <div class="info-column-details">
                     <div>Брэнд: Beatrees</div>
                     <div>Категория: Искусственные елки</div>
                     <div>Цена (в рублях): 2030</div>
@@ -119,11 +128,11 @@
                   <button class="btn btn-details">Информация</button>
                 </div>
               </div>
-              <div class="good-items_info">
+              <div class="good-items-info">
                 <h3 class="info-title">Настольная елка Айс Тиффани 90 см с ягодами и шишками</h3>
                 <div class="info-column">
-                  <div class="info-column_image"><img src="./id2.jpg" alt="goods" /></div>
-                  <div class="info-column_details">
+                  <div class="info-column-image"><img src="./id2.jpg" alt="goods" /></div>
+                  <div class="info-column-details">
                     <div>Брэнд: Beatrees</div>
                     <div>Категория: Искусственные елки</div>
                     <div>Цена (в рублях): 3040</div>
@@ -135,11 +144,11 @@
                   <button class="btn btn-details">Информация</button>
                 </div>
               </div>
-              <div class="good-items_info">
+              <div class="good-items-info">
                 <h3 class="info-title">Искусственная елка с лампочками Dakota заснеженная 122 см в кашпо</h3>
                 <div class="info-column">
-                  <div class="info-column_image"><img src="./id3.jpg" alt="goods" /></div>
-                  <div class="info-column_details">
+                  <div class="info-column-image"><img src="./id3.jpg" alt="goods" /></div>
+                  <div class="info-column-details">
                     <div>Брэнд: Beatrees</div>
                     <div>Категория: Искусственные елки</div>
                     <div>Цена (в рублях): 5100</div>
@@ -151,11 +160,11 @@
                   <button class="btn btn-details">Информация</button>
                 </div>
               </div>
-              <div class="good-items_info">
+              <div class="good-items-info">
                 <h3 class="info-title">Искусственная елка с лампочками Версальская заснеженная 210 см</h3>
                 <div class="info-column">
-                  <div class="info-column_image"><img src="./id4.jpg" alt="goods" /></div>
-                  <div class="info-column_details">
+                  <div class="info-column-image"><img src="./id4.jpg" alt="goods" /></div>
+                  <div class="info-column-details">
                     <div>Брэнд: Breitner</div>
                     <div>Категория: Искусственные елки</div>
                     <div>Цена (в рублях): 2030</div>
@@ -167,11 +176,11 @@
                   <button class="btn btn-details">Информация</button>
                 </div>
               </div>
-              <div class="good-items_info">
+              <div class="good-items-info">
                 <h3 class="info-title">Искусственная сосна с гирляндой Bedford заснеженная 228 см с шишками</h3>
                 <div class="info-column">
-                  <div class="info-column_image"><img src="./id5.jpg" alt="goods" /></div>
-                  <div class="info-column_details">
+                  <div class="info-column-image"><img src="./id5.jpg" alt="goods" /></div>
+                  <div class="info-column-details">
                     <div>Брэнд: Breitner</div>
                     <div>Категория: Искусственные елки</div>
                     <div>Цена (в рублях): 9900</div>
@@ -183,11 +192,11 @@
                   <button class="btn btn-details">Информация</button>
                 </div>
               </div>
-              <div class="good-items_info">
+              <div class="good-items-info">
                 <h3 class="info-title">Деревянная светящаяся елка Джероме 28 см</h3>
                 <div class="info-column">
-                  <div class="info-column_image"><img src="./id6.jpg" alt="goods" /></div>
-                  <div class="info-column_details">
+                  <div class="info-column-image"><img src="./id6.jpg" alt="goods" /></div>
+                  <div class="info-column-details">
                     <div>Брэнд: Breitner</div>
                     <div>Категория: Искусственные елки</div>
                     <div>Цена (в рублях): 700</div>
@@ -199,11 +208,11 @@
                   <button class="btn btn-details">Информация</button>
                 </div>
               </div>
-              <div class="good-items_info">
+              <div class="good-items-info">
                 <h3 class="info-title">Набор пластиковых шаров This is Christmas 8 см, 42 шт</h3>
                 <div class="info-column">
-                  <div class="info-column_image"><img src="./id7.jpg" alt="goods" /></div>
-                  <div class="info-column_details">
+                  <div class="info-column-image"><img src="./id7.jpg" alt="goods" /></div>
+                  <div class="info-column-details">
                     <div>Брэнд: Boltze</div>
                     <div>Категория: Пластиковые и стеклянные шары</div>
                     <div>Цена (в рублях): 300</div>
@@ -215,11 +224,11 @@
                   <button class="btn btn-details">Информация</button>
                 </div>
               </div>
-              <div class="good-items_info">
+              <div class="good-items-info">
                 <h3 class="info-title">Набор пластиковых шаров Winter Candy: White silver 8 см, 16 шт</h3>
                 <div class="info-column">
-                  <div class="info-column_image"><img src="./id8.jpg" alt="goods" /></div>
-                  <div class="info-column_details">
+                  <div class="info-column-image"><img src="./id8.jpg" alt="goods" /></div>
+                  <div class="info-column-details">
                     <div>Брэнд: Boltze</div>
                     <div>Категория: Пластиковые и стеклянные шары</div>
                     <div>Цена (в рублях): 400</div>
@@ -231,11 +240,11 @@
                   <button class="btn btn-details">Информация</button>
                 </div>
               </div>
-              <div class="good-items_info">
+              <div class="good-items-info">
                 <h3 class="info-title">Набор пластиковых шаров Winter Candy: Green 8 см, 16 шт</h3>
                 <div class="info-column">
-                  <div class="info-column_image"><img src="./id9.jpg" alt="goods" /></div>
-                  <div class="info-column_details">
+                  <div class="info-column-image"><img src="./id9.jpg" alt="goods" /></div>
+                  <div class="info-column-details">
                     <div>Брэнд: Boltze</div>
                     <div>Категория: Пластиковые и стеклянные шары</div>
                     <div>Цена (в рублях): 800</div>
@@ -247,11 +256,11 @@
                   <button class="btn btn-details">Информация</button>
                 </div>
               </div>
-              <div class="good-items_info">
+              <div class="good-items-info">
                 <h3 class="info-title">Коллекция стеклянных елочных шаров Рождественский Манхэттен 3.5 см, 16 шт</h3>
                 <div class="info-column">
-                  <div class="info-column_image"><img src="./id10.jpg" alt="goods" /></div>
-                  <div class="info-column_details">
+                  <div class="info-column-image"><img src="./id10.jpg" alt="goods" /></div>
+                  <div class="info-column-details">
                     <div>Брэнд: Edelman</div>
                     <div>Категория: Пластиковые и стеклянные шары</div>
                     <div>Цена (в рублях): 1000</div>
@@ -263,11 +272,11 @@
                   <button class="btn btn-details">Информация</button>
                 </div>
               </div>
-              <div class="good-items_info">
+              <div class="good-items-info">
                 <h3 class="info-title">Стеклянный елочный шар Зодиак - Кот Ральф в новогоднем колпачке 9 см красный</h3>
                 <div class="info-column">
-                  <div class="info-column_image"><img src="./id11.jpg" alt="goods" /></div>
-                  <div class="info-column_details">
+                  <div class="info-column-image"><img src="./id11.jpg" alt="goods" /></div>
+                  <div class="info-column-details">
                     <div>Брэнд: Edelman</div>
                     <div>Категория: Пластиковые и стеклянные шары</div>
                     <div>Цена (в рублях): 250</div>
@@ -279,13 +288,13 @@
                   <button class="btn btn-details">Информация</button>
                 </div>
               </div>
-              <div class="good-items_info">
+              <div class="good-items-info">
                 <h3 class="info-title">
                   Стеклянная елочная игрушка с композицией Птичий Диалог - Christmas Garden 16 см
                 </h3>
                 <div class="info-column">
-                  <div class="info-column_image"><img src="./id12.jpg" alt="goods" /></div>
-                  <div class="info-column_details">
+                  <div class="info-column-image"><img src="./id12.jpg" alt="goods" /></div>
+                  <div class="info-column-details">
                     <div>Брэнд: Edelman</div>
                     <div>Категория: Пластиковые и стеклянные шары</div>
                     <div>Цена (в рублях): 280</div>
@@ -297,13 +306,13 @@
                   <button class="btn btn-details">Информация</button>
                 </div>
               </div>
-              <div class="good-items_info">
+              <div class="good-items-info">
                 <h3 class="info-title">
                   Светодиодная гирлянда нить Lumineo Snake 22.5 м, 1000 экстра теплых белых LED ламп
                 </h3>
                 <div class="info-column">
-                  <div class="info-column_image"><img src="./id13.jpg" alt="goods" /></div>
-                  <div class="info-column_details">
+                  <div class="info-column-image"><img src="./id13.jpg" alt="goods" /></div>
+                  <div class="info-column-details">
                     <div>Брэнд: Bondibon</div>
                     <div>Категория: Электрогирлянды</div>
                     <div>Цена (в рублях): 760</div>
@@ -315,13 +324,13 @@
                   <button class="btn btn-details">Информация</button>
                 </div>
               </div>
-              <div class="good-items_info">
+              <div class="good-items-info">
                 <h3 class="info-title">
                   Светодиодная гирлянда на батарейках Luca Snake 4 м, 200 разноцветных LED ламп
                 </h3>
                 <div class="info-column">
-                  <div class="info-column_image"><img src="./id14.jpg" alt="goods" /></div>
-                  <div class="info-column_details">
+                  <div class="info-column-image"><img src="./id14.jpg" alt="goods" /></div>
+                  <div class="info-column-details">
                     <div>Брэнд: Bondibon</div>
                     <div>Категория: Электрогирлянды</div>
                     <div>Цена (в рублях): 860</div>
@@ -333,11 +342,11 @@
                   <button class="btn btn-details">Информация</button>
                 </div>
               </div>
-              <div class="good-items_info">
+              <div class="good-items-info">
                 <h3 class="info-title">Светодиодный занавес Quality Light 2*2 м, 400 теплых белых LED ламп</h3>
                 <div class="info-column">
-                  <div class="info-column_image"><img src="./id15.jpg" alt="goods" /></div>
-                  <div class="info-column_details">
+                  <div class="info-column-image"><img src="./id15.jpg" alt="goods" /></div>
+                  <div class="info-column-details">
                     <div>Брэнд: Bondibon</div>
                     <div>Категория: Электрогирлянды</div>
                     <div>Цена (в рублях): 740</div>
@@ -349,11 +358,11 @@
                   <button class="btn btn-details">Информация</button>
                 </div>
               </div>
-              <div class="good-items_info">
+              <div class="good-items-info">
                 <h3 class="info-title">Гирлянда из белых лампочек Ретро, 20 ламп, теплые белые LED, 9.5 м</h3>
                 <div class="info-column">
-                  <div class="info-column_image"><img src="./id16.jpg" alt="goods" /></div>
-                  <div class="info-column_details">
+                  <div class="info-column-image"><img src="./id16.jpg" alt="goods" /></div>
+                  <div class="info-column-details">
                     <div>Брэнд: Edelman</div>
                     <div>Категория: Электрогирлянды</div>
                     <div>Цена (в рублях): 1160</div>
@@ -365,11 +374,11 @@
                   <button class="btn btn-details">Информация</button>
                 </div>
               </div>
-              <div class="good-items_info">
+              <div class="good-items-info">
                 <h3 class="info-title">Светодиодная гирлянда Classic Retro 5 м, 100 разноцветных LED ламп</h3>
                 <div class="info-column">
-                  <div class="info-column_image"><img src="./id17.jpg" alt="goods" /></div>
-                  <div class="info-column_details">
+                  <div class="info-column-image"><img src="./id17.jpg" alt="goods" /></div>
+                  <div class="info-column-details">
                     <div>Брэнд: Edelman</div>
                     <div>Категория: Электрогирлянды</div>
                     <div>Цена (в рублях): 1100</div>
@@ -381,11 +390,11 @@
                   <button class="btn btn-details">Информация</button>
                 </div>
               </div>
-              <div class="good-items_info">
+              <div class="good-items-info">
                 <h3 class="info-title">Гирлянда из лампочек Ludovico, 8 ламп с теплым белым светом, 2.1 м</h3>
                 <div class="info-column">
-                  <div class="info-column_image"><img src="./id18.jpg" alt="goods" /></div>
-                  <div class="info-column_details">
+                  <div class="info-column-image"><img src="./id18.jpg" alt="goods" /></div>
+                  <div class="info-column-details">
                     <div>Брэнд: Edelman</div>
                     <div>Категория: Электрогирлянды</div>
                     <div>Цена (в рублях): 1200</div>
@@ -397,11 +406,11 @@
                   <button class="btn btn-details">Информация</button>
                 </div>
               </div>
-              <div class="good-items_info">
+              <div class="good-items-info">
                 <h3 class="info-title">Декоративный светильник Домик в Валь Торанс 31 см, 8 LED ламп</h3>
                 <div class="info-column">
-                  <div class="info-column_image"><img src="./id19.jpg" alt="goods" /></div>
-                  <div class="info-column_details">
+                  <div class="info-column-image"><img src="./id19.jpg" alt="goods" /></div>
+                  <div class="info-column-details">
                     <div>Брэнд: Breitner</div>
                     <div>Категория: Световой декор</div>
                     <div>Цена (в рублях): 1230</div>
@@ -413,13 +422,13 @@
                   <button class="btn btn-details">Информация</button>
                 </div>
               </div>
-              <div class="good-items_info">
+              <div class="good-items-info">
                 <h3 class="info-title">
                   Рождественская горка Sara 43*38 см красная с орнаментом, 7 электрических свечей
                 </h3>
                 <div class="info-column">
-                  <div class="info-column_image"><img src="./id20.jpg" alt="goods" /></div>
-                  <div class="info-column_details">
+                  <div class="info-column-image"><img src="./id20.jpg" alt="goods" /></div>
+                  <div class="info-column-details">
                     <div>Брэнд: Breitner</div>
                     <div>Категория: Световой декор</div>
                     <div>Цена (в рублях): 1360</div>
@@ -431,11 +440,11 @@
                   <button class="btn btn-details">Информация</button>
                 </div>
               </div>
-              <div class="good-items_info">
+              <div class="good-items-info">
                 <h3 class="info-title">Домик с подсветкой Villana Ginger 41 см</h3>
                 <div class="info-column">
-                  <div class="info-column_image"><img src="./id21.jpg" alt="goods" /></div>
-                  <div class="info-column_details">
+                  <div class="info-column-image"><img src="./id21.jpg" alt="goods" /></div>
+                  <div class="info-column-details">
                     <div>Брэнд: Breitner</div>
                     <div>Категория: Световой декор</div>
                     <div>Цена (в рублях): 1550</div>
@@ -447,11 +456,11 @@
                   <button class="btn btn-details">Информация</button>
                 </div>
               </div>
-              <div class="good-items_info">
+              <div class="good-items-info">
                 <h3 class="info-title">Светодиодная картина Огни уютного Вечера 40*40 см, на батарейках</h3>
                 <div class="info-column">
-                  <div class="info-column_image"><img src="./id22.jpg" alt="goods" /></div>
-                  <div class="info-column_details">
+                  <div class="info-column-image"><img src="./id22.jpg" alt="goods" /></div>
+                  <div class="info-column-details">
                     <div>Брэнд: Breitner</div>
                     <div>Категория: Световой декор</div>
                     <div>Цена (в рублях): 1440</div>
@@ -463,11 +472,11 @@
                   <button class="btn btn-details">Информация</button>
                 </div>
               </div>
-              <div class="good-items_info">
+              <div class="good-items-info">
                 <h3 class="info-title">Светодиодная картина Город на Канале 3, 30*40 см, батарейки</h3>
                 <div class="info-column">
-                  <div class="info-column_image"><img src="./id23.jpg" alt="goods" /></div>
-                  <div class="info-column_details">
+                  <div class="info-column-image"><img src="./id23.jpg" alt="goods" /></div>
+                  <div class="info-column-details">
                     <div>Брэнд: Breitner</div>
                     <div>Категория: Световой декор</div>
                     <div>Цена (в рублях): 1560</div>
@@ -479,11 +488,11 @@
                   <button class="btn btn-details">Информация</button>
                 </div>
               </div>
-              <div class="good-items_info">
+              <div class="good-items-info">
                 <h3 class="info-title">Светодиодная картина Зимнее Кантри 40*30 см на батарейках</h3>
                 <div class="info-column">
-                  <div class="info-column_image"><img src="./id24.jpg" alt="goods" /></div>
-                  <div class="info-column_details">
+                  <div class="info-column-image"><img src="./id24.jpg" alt="goods" /></div>
+                  <div class="info-column-details">
                     <div>Брэнд: Breitner</div>
                     <div>Категория: Световой декор</div>
                     <div>Цена (в рублях): 630</div>
@@ -495,11 +504,11 @@
                   <button class="btn btn-details">Информация</button>
                 </div>
               </div>
-              <div class="good-items_info">
+              <div class="good-items-info">
                 <h3 class="info-title">Карнавальный Плащ Принцессы - Голубой Сатин, рост 110-122 см (Батик)</h3>
                 <div class="info-column">
-                  <div class="info-column_image"><img src="./id25.jpg" alt="goods" /></div>
-                  <div class="info-column_details">
+                  <div class="info-column-image"><img src="./id25.jpg" alt="goods" /></div>
+                  <div class="info-column-details">
                     <div>Брэнд: Bondibon</div>
                     <div>Категория: Карнавальные костюмы</div>
                     <div>Цена (в рублях): 2430</div>
@@ -511,11 +520,11 @@
                   <button class="btn btn-details">Информация</button>
                 </div>
               </div>
-              <div class="good-items_info">
+              <div class="good-items-info">
                 <h3 class="info-title">Карнавальный костюм Сделай сам - Санточка, 98-128 рост</h3>
                 <div class="info-column">
-                  <div class="info-column_image"><img src="./id26.jpg" alt="goods" /></div>
-                  <div class="info-column_details">
+                  <div class="info-column-image"><img src="./id26.jpg" alt="goods" /></div>
+                  <div class="info-column-details">
                     <div>Брэнд: Bondibon</div>
                     <div>Категория: Карнавальные костюмы</div>
                     <div>Цена (в рублях): 1220</div>
@@ -527,11 +536,11 @@
                   <button class="btn btn-details">Информация</button>
                 </div>
               </div>
-              <div class="good-items_info">
+              <div class="good-items-info">
                 <h3 class="info-title">Карнавальный костюм Сделай сам - Пиратка, 98-128 рос</h3>
                 <div class="info-column">
-                  <div class="info-column_image"><img src="./id27.jpg" alt="goods" /></div>
-                  <div class="info-column_details">
+                  <div class="info-column-image"><img src="./id27.jpg" alt="goods" /></div>
+                  <div class="info-column-details">
                     <div>Брэнд: Bondibon</div>
                     <div>Категория: Карнавальные костюмы</div>
                     <div>Цена (в рублях): 1430</div>
@@ -543,11 +552,11 @@
                   <button class="btn btn-details">Информация</button>
                 </div>
               </div>
-              <div class="good-items_info">
+              <div class="good-items-info">
                 <h3 class="info-title">Шапка Санты с бородой 70*35 см (Koopman)</h3>
                 <div class="info-column">
-                  <div class="info-column_image"><img src="./id28.jpg" alt="goods" /></div>
-                  <div class="info-column_details">
+                  <div class="info-column-image"><img src="./id28.jpg" alt="goods" /></div>
+                  <div class="info-column-details">
                     <div>Брэнд: Bondibon</div>
                     <div>Категория: Карнавальные костюмы</div>
                     <div>Цена (в рублях): 230</div>
@@ -559,11 +568,11 @@
                   <button class="btn btn-details">Информация</button>
                 </div>
               </div>
-              <div class="good-items_info">
+              <div class="good-items-info">
                 <h3 class="info-title">Новогодний мешок для подарков Санта 70*50 см (Koopman)</h3>
                 <div class="info-column">
-                  <div class="info-column_image"><img src="./id29.jpg" alt="goods" /></div>
-                  <div class="info-column_details">
+                  <div class="info-column-image"><img src="./id29.jpg" alt="goods" /></div>
+                  <div class="info-column-details">
                     <div>Брэнд: Bondibon</div>
                     <div>Категория: Карнавальные костюмы</div>
                     <div>Цена (в рублях): 560</div>
@@ -575,11 +584,11 @@
                   <button class="btn btn-details">Информация</button>
                 </div>
               </div>
-              <div class="good-items_info">
+              <div class="good-items-info">
                 <h3 class="info-title">Новогодняя Шапка-ушанка для взрослых, 58 размер (Батик)</h3>
                 <div class="info-column">
-                  <div class="info-column_image"><img src="./id30.jpg" alt="goods" /></div>
-                  <div class="info-column_details">
+                  <div class="info-column-image"><img src="./id30.jpg" alt="goods" /></div>
+                  <div class="info-column-details">
                     <div>Брэнд: Bondibon</div>
                     <div>Категория: Карнавальные костюмы</div>
                     <div>Цена (в рублях): 330</div>
@@ -597,24 +606,19 @@
       </div>
     </main>
     <footer class="footer">
-      <div class="wrapper wrapper-footer">
-        <ul class="footer_list">
-          <li class="footer_list_item">
-            <a href="https://github.com/nbelchikova">Natalia</a>
-          </li>
-          <li class="footer_list_item">
-            <a href="https://github.com/Kunitsa3">Olga</a>
-          </li>
-          <li class="footer_list_item">
-            <a href="">2022</a>
-          </li>
-          <li class="footer_list_item">
-            <img src="./rs.png" alt="logo" />
-          </li>
-          <li class="footer_list_item">
-            <a href="https://rs.school/js/">Link</a>
-          </li>
-        </ul>
+      <a href="https://rs.school/js/">
+        <img src="./footer/logo-rsschool3.png" alt="logo" class="footer-logo" />
+      </a>
+      <p class="footer-year">2022</p>
+      <div class="footer-github">
+        <div class="footer-link">
+          <img src="./footer/github.png" class="footer-link-image" />
+          <a href="https://github.com/nbelchikova" class="footer-link-text">Natalia</a>
+        </div>
+        <div class="footer-link">
+          <img src="./footer/github.png" class="footer-link-image" />
+          <a href="https://github.com/Kunitsa3" class="footer-link-text">Olga</a>
+        </div>
       </div>
     </footer>
   </body>

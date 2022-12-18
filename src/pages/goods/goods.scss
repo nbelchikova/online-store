@@ -1,15 +1,12 @@
 @import '../../styles/index';
 
-.card_info {
+.card-info {
   display: block;
   margin: 110px auto;
   font-size: 15px;
   border: 2px solid $main;
   border-radius: 10px;
-  padding-left: 20px;
-  padding-right: 20px;
-  padding-top: 20px;
-  padding-bottom: 20px;
+  padding: 20px;
 }
 
 .card-title {
@@ -24,45 +21,42 @@
   display: flex;
 }
 
-.card_image {
+.card-image {
   width: 48%;
   display: block;
 }
 
-.card_image_big {
+.card-image-big {
   width: 400px;
 }
 
-.card_details {
+.card-details {
   width: 48%;
   display: block;
+  color: $main;
+  font-size: 20px;
 }
 
-.card_image_small {
+.card-image-small {
   display: flex;
   width: 400px;
   justify-content: space-around;
   margin-top: 30px;
 }
 
-.card_image_small_1 {
+.card-image-small-1 {
   width: 150px;
 }
 
-.card_image_small_2 {
+.card-image-small-2 {
   width: 150px;
 }
 
-.card_details {
-  color: $main;
-  font-size: 20px;
-}
-
-.card_brand_details,
-.card_category_details,
-.card_cost_details,
-.card_quantity_details,
-.card_description_details {
+.card-brand-details,
+.card-category-details,
+.card-cost-details,
+.card-quantity-details,
+.card-description-details {
   color: $black;
   font-size: 15px;
   margin-bottom: 30px;

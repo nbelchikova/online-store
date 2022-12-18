@@ -2,26 +2,50 @@
   position: fixed;
   bottom: 0;
   z-index: 5;
-  display: block;
   background-color: $main;
   height: 80px;
-  border-radius: 10px;
   width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 40px;
 
-  &_list {
-    display: flex;
-    height: 80px;
-    justify-content: space-around;
-    align-items: center;
+  &-logo {
+    width: 120px;
   }
 
-  &_list_item {
-    a {
-      color: $white;
+  &-year {
+    color: $white;
+    font-size: 24px;
+  }
+
+  &-github {
+    display: flex;
+  }
+
+  &-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:first-child {
+      margin-right: 100px;
     }
 
-    img {
-      width: 50px;
+    &-image {
+      width: 30px;
+      height: 30px;
+      margin-right: 15px;
+    }
+
+    &-text {
+      text-decoration: none;
+      color: $white;
+      font-size: 32px;
+
+      &:first-child {
+        margin-right: 20px;
+      }
     }
   }
 }
