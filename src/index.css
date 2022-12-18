@@ -48,21 +48,21 @@ html {
 }
 .slider_items_img {
   display: none;
-}
-.slider_items_img-active {
-  display: block;
   width: 1000px;
   margin: 20px auto 50px auto;
 }
+
 .array-left {
   position: absolute;
   left: 0;
   top: 120px;
+  z-index: 10;
 }
 .array-right {
   position: absolute;
   right: 0;
   top: 120px;
+  z-index: 10;
 }
 .shop {
   display: flex;
@@ -142,3 +142,5 @@ html {
 .info-btn {
   display: flex;
 }
+
+
