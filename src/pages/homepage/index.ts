@@ -1,10 +1,9 @@
-import '../../styles/index.scss';
 import './index.scss';
 import { itemsData } from '../../helpers/item';
 
-const leftArray = document.querySelector('.array-left_img') as HTMLElement | null;
-const rightArray = document.querySelector('.array-right_img') as HTMLElement | null;
-const imgSlider = document.querySelectorAll<HTMLElement>('.slider_items_img');
+const leftArray = document.querySelector('.array-left-img') as HTMLElement | null;
+const rightArray = document.querySelector('.array-right-img') as HTMLElement | null;
+const imgSlider = document.querySelectorAll<HTMLElement>('.slider-items-img');
 let i = 0;
 imgSlider[0].style.display = 'block';
 

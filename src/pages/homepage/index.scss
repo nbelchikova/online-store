@@ -1,12 +1,15 @@
 @import '../../styles/index';
 
+* {
+  box-sizing: border-box;
+}
+
 html {
   background-image: url('../../../public/background.jpg');
   background-repeat: repeat;
   background-position: center;
   background-size: cover;
   font-size: 20px;
-  box-sizing: border-box;
   font-family: Lora, serif;
 }
 
@@ -15,23 +18,12 @@ html {
   margin: 0 auto;
 }
 
-.header {
-  display: block;
-  background-color: $main;
-  height: 80px;
-  border-radius: 10px;
-  width: 100%;
-  position: fixed;
-  top: 0;
-  z-index: 5;
-}
-
 .slider {
-  margin-top: 100px;
+  margin-top: 150px;
   position: relative;
 }
 
-.slider_items_img {
+.slider-items-img {
   display: none;
   width: 1000px;
   margin: 20px auto 50px;
@@ -57,7 +49,7 @@ html {
   margin-bottom: 100px;
 }
 
-.shop_filter {
+.shop-filter {
   width: 370px;
   border: 2px solid $main;
   height: 500px;
@@ -66,21 +58,21 @@ html {
   padding-left: 20px;
 }
 
-.shop_items {
+.shop-items {
   width: 700px;
   border: 2px solid $main;
   height: auto;
   border-radius: 10px;
 }
 
-.shop_filter_title {
+.shop-filter-title {
   font-size: 20px;
   color: $main;
   text-align: center;
   margin-bottom: 10px;
 }
 
-.p_filter {
+.p-filter {
   margin-bottom: 10px;
   margin-top: 10px;
 }
@@ -111,7 +103,7 @@ html {
   flex-wrap: wrap;
 }
 
-.good-items_info {
+.good-items-info {
   width: 326px;
   border: 2px solid $main;
   height: 300px;
@@ -132,7 +124,7 @@ html {
   font-size: 15px;
 }
 
-.info-column_image img {
+.info-column-image img {
   width: 150px;
   margin-right: 20px;
   margin-left: 10px;
