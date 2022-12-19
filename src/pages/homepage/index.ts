@@ -1,5 +1,6 @@
 import './index.scss';
 import { itemsData } from '../../helpers/item';
+import { addProducts } from './utils/addProducts';
 
 const leftArray = document.querySelector('.array-left-img') as HTMLElement | null;
 
@@ -27,7 +28,6 @@ leftArray?.addEventListener('click', () => {
   imgSlider[i].style.display = 'block';
 });
 
-
 // add right slider
 
 rightArray?.addEventListener('click', () => {
@@ -43,6 +43,11 @@ rightArray?.addEventListener('click', () => {
   imgSlider[i].style.display = 'block';
 });
 
+// add products
+
+itemsData.forEach(({ name, image1, brand, category, cost, warehouse }) => {
+  addProducts(name, image1, brand, category, cost, warehouse);
+});
 
 // add search
 
@@ -60,38 +65,21 @@ choose?.addEventListener('input', () => {
 
 // add filter according cost
 select?.addEventListener('change', () => {
-  const arr: number[] = [];
-  let arr1: number[] = [];
-  let arr2: number[] = [];
+  const productsWrapper = document.querySelector('.good-items') as HTMLElement;
+  productsWrapper.innerHTML = '';
 
-  for (let m = 0; m < itemsData.length; m++) {
-    arr.push(itemsData[m].cost);
+  let filteredArray;
+
+  if (select.value === 'normal') {
+    filteredArray = itemsData;
+  } else {
+    filteredArray =
+      select.value === 'asc'
+        ? [...itemsData].sort((a, b) => a.cost - b.cost)
+        : [...itemsData].sort((a, b) => b.cost - a.cost);
   }
 
-  for (let r = 0; r < goods.length; r++) {
-    if (select.value === '1') {
-      goods[r].style.order = `${r}`;
-    }
-
-    if (select.value === '2') {
-      arr1 = arr.sort((a, b) => a - b);
-
-      for (let j = 0; j < arr1.length; j++) {
-        if (itemsData[r].cost === arr1[j]) {
-          goods[r].style.order = `${j}`;
-        }
-      }
-    }
-
-    if (select.value === '3') {
-      arr2 = arr.sort((a, b) => b - a);
-
-      for (let j = 0; j < arr2.length; j++) {
-        if (itemsData[r].cost === arr2[j]) {
-          goods[r].style.order = `${j}`;
-        }
-      }
-    }
-  }
+  filteredArray.forEach(({ name, image1, brand, category, cost, warehouse }) => {
+    addProducts(name, image1, brand, category, cost, warehouse);
+  });
 });
-
