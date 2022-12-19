@@ -1,0 +1,27 @@
+.footer {
+  position: fixed;
+  bottom: 0;
+  z-index: 5;
+  display: block;
+  background-color: $main;
+  height: 80px;
+  border-radius: 10px;
+  width: 100%;
+
+  &_list {
+    display: flex;
+    height: 80px;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  &_list_item {
+    a {
+      color: $white;
+    }
+
+    img {
+      width: 50px;
+    }
+  }
+}
