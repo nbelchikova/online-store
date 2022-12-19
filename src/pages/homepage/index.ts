@@ -2,6 +2,7 @@ import './index.scss';
 import { itemsData } from '../../helpers/item';
 
 const leftArray = document.querySelector('.array-left-img') as HTMLElement | null;
+
 const choose = document.querySelector('#choose') as HTMLInputElement | null;
 const select = document.querySelector('.cost-filter-select') as HTMLInputElement | null;
 const rightArray = document.querySelector('.array-right-img') as HTMLElement | null;
@@ -9,6 +10,7 @@ const imgSlider = document.querySelectorAll<HTMLElement>('.slider-items-img');
 const goods = document.querySelectorAll<HTMLElement>('.good-items-info');
 
 // add left slider
+
 let i = 0;
 imgSlider[0].style.display = 'block';
 
@@ -25,7 +27,9 @@ leftArray?.addEventListener('click', () => {
   imgSlider[i].style.display = 'block';
 });
 
+
 // add right slider
+
 rightArray?.addEventListener('click', () => {
   imgSlider[0].style.display = 'none';
   imgSlider[i].style.display = 'none';
@@ -38,6 +42,7 @@ rightArray?.addEventListener('click', () => {
 
   imgSlider[i].style.display = 'block';
 });
+
 
 // add search
 
@@ -89,3 +94,4 @@ select?.addEventListener('change', () => {
     }
   }
 });
+
