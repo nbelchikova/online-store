@@ -64,11 +64,11 @@ select?.addEventListener('change', () => {
   }
 
   for (let r = 0; r < goods.length; r++) {
-    if (select.value === '1') {
+    if (select.value === 'no filter') {
       goods[r].style.order = `${r}`;
     }
 
-    if (select.value === '2') {
+    if (select.value === 'asc') {
       arr1 = arr.sort((a, b) => a - b);
 
       for (let j = 0; j < arr1.length; j++) {
@@ -78,7 +78,7 @@ select?.addEventListener('change', () => {
       }
     }
 
-    if (select.value === '3') {
+    if (select.value === 'desc') {
       arr2 = arr.sort((a, b) => b - a);
 
       for (let j = 0; j < arr2.length; j++) {
