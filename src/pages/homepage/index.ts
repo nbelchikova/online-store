@@ -59,20 +59,13 @@ function itemSearch(): void {
   if (!choose?.value) {
     searchArray = arrData;
   } else {
-    const results = [];
+    let results = [];
 
     for (let q = 0; q < arrData.length; q++) {
-      if (
-        arrData[q].name.includes(choose.value) ||
-        arrData[q].brand.includes(choose.value) ||
-        arrData[q].category.includes(choose.value) ||
-        String(arrData[q].cost).includes(choose.value) ||
-        String(arrData[q].warehouse).includes(choose.value)
-      ) {
+      if (Object.values(arrData[q]).some(el => String(el).includes(choose.value))) {
         results.push(arrData[q]);
       }
     }
-
     searchArray = results;
   }
 
@@ -92,20 +85,21 @@ choose?.addEventListener('input', itemSearch);
 function priceFilter(): void {
   const productsWrapper = document.querySelector('.good-items') as HTMLElement;
   productsWrapper.innerHTML = '';
-
   let filteredArray;
-
+  type SortOrder = 'ascWare' | 'descWare' | 'asc' | 'desc';
+  const orders= {
+    ascWare: (a: IGoods, b: IGoods) => a.warehouse - b.warehouse,
+    descWare: (a: IGoods, b: IGoods) => b.warehouse - a.warehouse,
+    asc: (a: IGoods, b: IGoods) => a.cost - b.cost,
+    desc: (a: IGoods, b: IGoods) => b.cost - a.cost
+  }
+  if (!select?.value) {
+    return;
+  }
   if (select?.value === 'normal') {
     filteredArray = arrData;
-  } else if (select?.value === 'ascWare') {
-    filteredArray = [...arrData].sort((a, b) => a.warehouse - b.warehouse);
-  } else if (select?.value === 'descWare') {
-    filteredArray = [...arrData].sort((a, b) => b.warehouse - a.warehouse);
   } else {
-    filteredArray =
-      select?.value === 'asc'
-        ? [...arrData].sort((a, b) => a.cost - b.cost)
-        : [...arrData].sort((a, b) => b.cost - a.cost);
+    filteredArray = [...arrData].sort(orders[select.value as SortOrder]);
   }
 
   filteredArray.forEach(({ name, image1, brand, category, cost, warehouse }) => {
