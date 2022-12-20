@@ -1,4 +1,5 @@
 import { createElement } from '../../../helpers/helpers';
+import { IGoods } from '../../../helpers/item';
 
 export const addProducts = (
   title: string,
@@ -29,7 +30,6 @@ export const addProducts = (
   createElement('button', infoBtn, ['btn', 'btn-details'], 'Информация');
 };
 
-
 export const addProductsSmall = (title: string, src: string): void => {
   const productsWrapper = document.querySelector('.good-items') as HTMLElement;
   const productWrapper = createElement('div', productsWrapper, ['good-items-info2']);
@@ -46,3 +46,41 @@ export const addProductsSmall = (title: string, src: string): void => {
   createElement('button', infoBtn, ['btn2', 'btn-details'], 'Информация');
 };
 
+export const createLabelWithInput = (inputId: string, filterType: string, wrapperSelector: string): void => {
+  const productsWrapper = document.querySelector(wrapperSelector) as HTMLElement;
+  const label = document.createElement('label');
+  label.setAttribute('for', inputId);
+  label.setAttribute('id', `${inputId}-label`);
+  productsWrapper.appendChild(label);
+  const input = document.createElement('input');
+  input.setAttribute('type', 'radio');
+  input.setAttribute('name', filterType);
+  input.setAttribute('id', inputId);
+  input.setAttribute('value', inputId);
+  label.appendChild(input);
+  const text = document.createElement('span');
+  text.innerText = inputId;
+  label.appendChild(text);
+};
+
+export const addFiltersCategories = (items: IGoods[]): void => {
+  const productsWrapper = document.querySelector('.categories-wrapper') as HTMLElement;
+  productsWrapper.innerHTML = '';
+
+  const categories = [...new Set(items.map(item => item.category))];
+
+  categories.forEach(category => {
+    createLabelWithInput(category, 'category', '.categories-wrapper');
+  });
+};
+
+export const addFiltersBrands = (items: IGoods[]): void => {
+  const productsWrapper = document.querySelector('.brands-wrapper') as HTMLElement;
+  productsWrapper.innerHTML = '';
+
+  const brands = [...new Set(items.map(item => item.brand))];
+
+  brands.forEach(brand => {
+    createLabelWithInput(brand, 'brand', '.brands-wrapper');
+  });
+};
