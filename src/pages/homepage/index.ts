@@ -1,15 +1,19 @@
 import './index.scss';
+
 import { itemsData, IGoods } from '../../helpers/item';
 import { addProducts, addProductsSmall } from './utils/addProducts';
 
 const leftArray = document.querySelector('.array-left-img') as HTMLElement | null;
 let arrData: IGoods[] = itemsData;
+
 const choose = document.querySelector('#choose') as HTMLInputElement | null;
 const select = document.querySelector('.cost-filter-select') as HTMLInputElement | null;
 const rightArray = document.querySelector('.array-right-img') as HTMLElement | null;
 const imgSlider = document.querySelectorAll<HTMLElement>('.slider-items-img');
+
 const itemSmall = document.querySelector('.items-quantity-small') as HTMLElement | null;
 const itemBig = document.querySelector('.items-quantity-big') as HTMLElement | null;
+
 
 // add left slider
 
@@ -51,6 +55,7 @@ itemsData.forEach(({ name, image1, brand, category, cost, warehouse }) => {
 });
 
 // add search
+
 function itemSearch(): void {
   const productsWrapper = document.querySelector('.good-items') as HTMLElement;
   productsWrapper.innerHTML = '';
@@ -100,11 +105,13 @@ function priceFilter(): void {
     filteredArray = arrData;
   } else {
     filteredArray = [...arrData].sort(orders[select.value as SortOrder]);
+
   }
 
   filteredArray.forEach(({ name, image1, brand, category, cost, warehouse }) => {
     addProducts(name, image1, brand, category, cost, warehouse);
   });
+
   arrData = filteredArray;
   itemBig?.addEventListener('click', bigSize);
   itemSmall?.addEventListener('click', smallSize);
@@ -138,3 +145,4 @@ function bigSize(): void {
 }
 
 itemBig?.addEventListener('click', bigSize);
+

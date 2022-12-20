@@ -29,6 +29,7 @@ export const addProducts = (
   createElement('button', infoBtn, ['btn', 'btn-details'], 'Информация');
 };
 
+
 export const addProductsSmall = (title: string, src: string): void => {
   const productsWrapper = document.querySelector('.good-items') as HTMLElement;
   const productWrapper = createElement('div', productsWrapper, ['good-items-info2']);
@@ -44,3 +45,4 @@ export const addProductsSmall = (title: string, src: string): void => {
   createElement('button', infoBtn, ['btn2', 'btn-cart'], 'Добавить в корзину');
   createElement('button', infoBtn, ['btn2', 'btn-details'], 'Информация');
 };
+

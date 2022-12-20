@@ -81,6 +81,7 @@ html {
   border: $main;
   height: 20px;
 }
+
 .btn2 {
   width: 100%;
   margin: 10px auto;
@@ -90,6 +91,7 @@ html {
   border: $main;
   height: 20px;
 }
+
 .cost-filter {
   margin-left: 20px;
 }
@@ -115,6 +117,7 @@ html {
   margin-left: 10px;
   margin-bottom: 10px;
 }
+
 .good-items-info2 {
   width: 155px;
   border: 2px solid $main;
@@ -124,11 +127,13 @@ html {
   margin-bottom: 10px;
 
 }
+
 .info-title {
   text-align: center;
   text-decoration: underline;
   color: $main;
 }
+
 .info-title2 {
   display: block;
   text-align: center;
@@ -138,20 +143,24 @@ html {
   height: 80px;
 }
 
+
 .info-column {
   display: flex;
   margin-top: 20px;
   font-size: 15px;
 }
+
 .info-column2 {
   margin-top: 10px;
   height: 125px;
 }
+
 .info-column-image img {
   width: 150px;
   margin-right: 20px;
   margin-left: 10px;
 }
+
 .info-column-image2 img {
   display: block;
   width: 100px;
@@ -163,6 +172,7 @@ html {
 .info-btn2 {
   display: block;
 }
+
 
 
 .forms {
@@ -201,3 +211,4 @@ html {
   border-radius: 20px;
   background-color: $white;
 }
+
