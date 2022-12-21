@@ -1,6 +1,8 @@
 import { createElement } from '../../../helpers/helpers';
 import { IGoods } from '../../../helpers/item';
+
 import { infoDetail } from './infoButton';
+
 
 
 export const addProducts = (
@@ -31,7 +33,9 @@ export const addProducts = (
   createElement('button', infoBtn, ['btn', 'btn-cart'], 'Добавить в корзину');
   createElement('button', infoBtn, ['btn', 'btn-details'], 'Информация');
 
+
   infoDetail();
+
 };
 
 export const addProductsSmall = (title: string, src: string): void => {

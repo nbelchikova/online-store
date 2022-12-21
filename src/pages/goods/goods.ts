@@ -1,7 +1,2 @@
 import './goods.scss';
 
- 
-
-
-
-
