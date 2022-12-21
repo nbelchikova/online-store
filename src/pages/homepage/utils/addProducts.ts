@@ -1,5 +1,6 @@
 import { createElement } from '../../../helpers/helpers';
 import { IGoods } from '../../../helpers/item';
+import { infoDetail } from './infoButton';
 
 export const addProducts = (
   title: string,
@@ -28,6 +29,8 @@ export const addProducts = (
   const infoBtn = createElement('div', productWrapper, ['info-btn']);
   createElement('button', infoBtn, ['btn', 'btn-cart'], 'Добавить в корзину');
   createElement('button', infoBtn, ['btn', 'btn-details'], 'Информация');
+
+  infoDetail();
 };
 
 export const addProductsSmall = (title: string, src: string): void => {
