@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&family=Rochester&display=swap"
+      rel="stylesheet"
+    />
+    <title>Online-store</title>
+  </head>
+  <body>
+    <header class="header">
+      <div class="header-logo">
+        <img class="header-logo-image" src="./header/christmas-ball.png" alt="christmas-ball" />
+      </div>
+      <p class="header-logo-text">Online shop</p>
+      <div class="header-cart">
+        <img class="header-cart-image" src="./header/cart.png" alt="christmas-cart" />
+        <div class="header-cart-quantity">1</div>
+      </div>
+    </header>
+    <main class="main">
+      <div class="wrapper wrapper-main">
+        <section class="slider">
+          <div class="array-left">
+            <img src="./left.png" alt="array-left" class="array-left-img" />
+          </div>
+          <div class="array-right">
+            <img src="./right.png" alt="array-right" class="array-right-img" />
+          </div>
+          <div class="slider-items">
+            <img src="./slide1.jpg" alt="slider-items" class="slider-items-img" />
+            <img src="./slide2.png" alt="slider-items" class="slider-items-img" />
+            <img src="./slide3.jpg" alt="slider-items" class="slider-items-img" />
+            <img src="./slide4.jpg" alt="slider-items" class="slider-items-img" />
+            <img src="./slide5.png" alt="slider-items" class="slider-items-img" />
+            <img src="./slide6.jpg" alt="slider-items" class="slider-items-img" />
+            <img src="./slide7.jpg" alt="slider-items" class="slider-items-img" />
+            <img src="./slide8.jpg" alt="slider-items" class="slider-items-img" />
+            <img src="./slide9.jpg" alt="slider-items" class="slider-items-img" />
+          </div>
+        </section>
+        <section class="shop">
+          <div class="shop-filter">
+            <h3 class="shop-filter-title">Фильтр</h3>
+            <form class="form shop-filter-category" id="category-form" action="">
+              <p class="p-filter" id="category">Категория</p>
+              <div class="categories-wrapper"></div>
+            </form>
+            <form class="form shop-filter-brand" id="form2" action="">
+              <p class="p-filter" id="brand">Brand</p>
+              <div class="brands-wrapper"></div>
+            </form>
+            <button class="btn btn-filter" id="formButton">Очистить</button>
+          </div>
+          <div class="shop-items">
+
+            <div class="items-quantity">
+              <div class="items-quantity-big">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+              </div>
+              <div class="items-quantity-small">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+              </div>
+            </div>
+
+
+            <div class="forms">
+              <form class="cost-filter">
+                <select class="cost-filter-select" name="costfilter">
+                  <option value="normal">Не выбрано</option>
+
+                  <option value="asc">По возрастанию цены</option>
+                  <option value="desc">По убыванию цены</option>
+                  <option value="ascWare">Количество на складе ↑</option>
+                  <option value="descWare">Количество на складе ↓</option>
+
+                </select>
+              </form>
+              <form class="form-input">
+                <input id="choose" type="text" placeholder="поиск" />
+              </form>
+            </div>
+
+            <div class="good-items">
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+    <footer class="footer">
+      <a href="https://rs.school/js/">
+        <img src="./footer/logo-rsschool3.png" alt="logo" class="footer-logo" />
+      </a>
+      <p class="footer-year">2022</p>
+      <div class="footer-github">
+        <div class="footer-link">
+          <img src="./footer/github.png" class="footer-link-image" />
+          <a href="https://github.com/nbelchikova" class="footer-link-text">Natalia</a>
+        </div>
+        <div class="footer-link">
+          <img src="./footer/github.png" class="footer-link-image" />
+          <a href="https://github.com/Kunitsa3" class="footer-link-text">Olga</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
