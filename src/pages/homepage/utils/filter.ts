@@ -1,4 +1,5 @@
 import { IGoods } from '../../../helpers/item';
+import { Goodcart } from '../../goods/goods';
 
 export function itemFilter(items: IGoods[]): IGoods[] {
   let filteredItems = items;

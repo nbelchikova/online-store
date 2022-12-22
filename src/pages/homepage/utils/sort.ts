@@ -1,4 +1,6 @@
 import { IGoods } from '../../../helpers/item';
+import { Goodcart } from '../../goods/goods';
+const select = document.querySelector('.cost-filter-select') as HTMLInputElement;
 
 const orders = {
   ascWare: (a: IGoods, b: IGoods) => a.warehouse - b.warehouse,
@@ -17,5 +19,9 @@ export function itemSort(items: IGoods[]): IGoods[] {
     return items;
   }
 
+  localStorage.setItem('sort', String(sortParam));
   return [...items].sort(orders[sortParam]);
+
 }
+let sortValue=localStorage.getItem('sort')? String(localStorage.getItem('sort')): 'normal' ;
+select.value = sortValue;
