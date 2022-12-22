@@ -1,37 +1,30 @@
-
-import { itemsData } from '../../../helpers/item';
+import {itemsData} from '../../../helpers/item'
 
 export function infoDetail() : void{
   const btnDetails = document.querySelectorAll<HTMLElement>('.btn.btn-details');
+  const infoTitle = document.querySelectorAll<HTMLElement>('.info-title');
   for (let g = 0; g < btnDetails.length; g++) {
-    console.log(1);
     btnDetails[g].addEventListener('click', () => {
-      window.location.href='goods.html';
-      const cardTitle = document.querySelector('#card-title') as HTMLElement
-      const imgBig = document.querySelector('#card-image-big') as HTMLImageElement
-      const imgSmall1 = document.querySelector('#card-image-small-1') as HTMLImageElement
-      const imgSmall2 = document.querySelector('#card-image-small-2') as HTMLImageElement
-      const cardBrand = document.querySelector('#card-brand-details') as HTMLElement
-      const cardCategory = document.querySelector('#card-category-details') as HTMLElement
-      const cardCost = document.querySelector('#card-cost-details') as HTMLElement
-      const cardQuantity = document.querySelector('#card-quantity-details') as HTMLElement
-      const cardDescription = document.querySelector('#card-description-details') as HTMLElement
-        cardTitle.textContent=`${itemsData[g].name}`
-        console.log(cardTitle.textContent)
-        imgBig.src=`${itemsData[g].image1}`
-        imgSmall1.src=`${itemsData[g].image1}`
-        imgSmall2.src=`${itemsData[g].image2}`
-        cardBrand.textContent=`${itemsData[g].brand}`
-        cardCategory.textContent=`${itemsData[g].category}`
-        cardCost.textContent=`${itemsData[g].cost}`
-        cardQuantity.textContent=`${itemsData[g].warehouse}`
 
+      const findParam = infoTitle[g].innerHTML;
+      const itemsFinal= findParam ? itemsData.filter(item => Object.values(item).some(el => String(el).includes(findParam))) : itemsData;
+      localStorage.setItem('id', String(itemsFinal[0].id));
+      window.location.href='goods.html';
     });
   }
-
-
 }
-
+export function infoDetailSmall() : void{
+  const btnDetails2 = document.querySelectorAll<HTMLElement>('.btn2.btn-details');
+  const infoTitle2 = document.querySelectorAll<HTMLElement>('.info-title2');
+  for (let g = 0; g < btnDetails2.length; g++) {
+    btnDetails2[g].addEventListener('click', () => {
+      const findParam = infoTitle2[g].innerHTML;
+      const itemsFinal= findParam ? itemsData.filter(item => Object.values(item).some(el => String(el).includes(findParam))) : itemsData;
+      localStorage.setItem('id', String(itemsFinal[0].id));
+      window.location.href='goods.html';
+    });
+  }
+}
 
 
 
