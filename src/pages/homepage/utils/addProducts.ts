@@ -1,7 +1,9 @@
 import { createElement } from '../../../helpers/helpers';
 import { IGoods } from '../../../helpers/item';
+
 import { infoDetail } from './infoButton';
 import { infoDetailSmall } from './infoButton';
+
 
 
 export const addProducts = (
@@ -32,7 +34,9 @@ export const addProducts = (
   createElement('button', infoBtn, ['btn', 'btn-cart'], 'Добавить в корзину');
   createElement('button', infoBtn, ['btn', 'btn-details'], 'Информация');
 
+
   infoDetail();
+
 };
 
 export const addProductsSmall = (title: string, src: string): void => {
@@ -49,7 +53,9 @@ export const addProductsSmall = (title: string, src: string): void => {
   const infoBtn = createElement('div', productWrapper, ['info-btn2']);
   createElement('button', infoBtn, ['btn2', 'btn-cart'], 'Добавить в корзину');
   createElement('button', infoBtn, ['btn2', 'btn-details'], 'Информация');
+
   infoDetailSmall();
+
 };
 
 export const createLabelWithInput = (inputId: string, filterType: string, wrapperSelector: string): void => {

@@ -1,4 +1,5 @@
 import './goods.scss';
+
 import './utils/imageShow';
 
 import { IGoods } from '../../helpers/item';

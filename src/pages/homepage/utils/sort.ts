@@ -1,4 +1,5 @@
 import { IGoods } from '../../../helpers/item';
+
 import { Goodcart } from '../../goods/goods';
 const select = document.querySelector('.cost-filter-select') as HTMLInputElement;
 
@@ -25,3 +26,4 @@ export function itemSort(items: IGoods[]): IGoods[] {
 }
 let sortValue=localStorage.getItem('sort')? String(localStorage.getItem('sort')): 'normal' ;
 select.value = sortValue;
+
