@@ -30,5 +30,5 @@ node_modules/
 # Build results
 dist
 
-src/styles/*.css
-src/styles/*.css.map
+**/*.css
+**/*.css.map
