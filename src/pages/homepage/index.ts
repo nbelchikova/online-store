@@ -27,15 +27,19 @@ const renderProducts = () => {
     searchedItemsArray.forEach(({ name, image1 }) => {
       addProductsSmall(name, image1);
     });
-    itemSmall.style.backgroundColor='$blue';
-    itemBig.style.backgroundColor='$main';
+    itemSmall.classList.add('blueSize');
+    itemBig.classList.add('mainSize');
+    itemSmall.classList.remove('mainSize');
+    itemBig.classList.remove('blueSize');
 
   } else {
     searchedItemsArray.forEach(({ name, image1, brand, category, cost, warehouse }) => {
       addProducts(name, image1, brand, category, cost, warehouse);
     });
-    itemBig.style.backgroundColor='$blue';
-    itemSmall.style.backgroundColor='$main';
+    itemBig.classList.add('blueSize');
+    itemSmall.classList.add('mainSize');
+    itemSmall.classList.remove('blueSize');
+    itemBig.classList.remove('mainSize');
 
   }
 
@@ -55,16 +59,20 @@ itemSmall?.addEventListener('click', () => {
   addToQueryParams('view', 'small');
   renderProducts();
 
-  itemSmall.style.backgroundColor='$blue';
-  itemBig.style.backgroundColor='$main';
+  itemSmall.classList.add('blueSize')
+  itemBig.classList.add('mainSize')
+  itemSmall.classList.remove('mainSize');
+  itemBig.classList.remove('blueSize');
 
 });
 itemBig?.addEventListener('click', () => {
   addToQueryParams('view', 'big');
   renderProducts();
 
-  itemBig.style.backgroundColor='$blue';
-  itemSmall.style.backgroundColor='$main';
+  itemBig.classList.add('blueSize');
+  itemSmall.classList.add('mainSize');
+  itemSmall.classList.remove('blueSize');
+  itemBig.classList.remove('mainSize');
 
 });
 
