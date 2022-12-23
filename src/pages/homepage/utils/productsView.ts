@@ -1,9 +1,6 @@
 import { IGoods } from '../../../helpers/item';
 import { addProducts, addProductsSmall } from './addProducts';
 import { Goodcart } from '../../goods/goods';
-const currentUrl = new URLSearchParams(window.location.search);
-const viewParam = currentUrl.get('view');
-localStorage.setItem('find', String(viewParam));
 
 export function smallSize(items: IGoods[]): void {
   const productsWrapper = document.querySelector('.good-items') as HTMLElement;

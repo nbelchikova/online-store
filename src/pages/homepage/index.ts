@@ -21,7 +21,7 @@ const renderProducts = () => {
 
   productsWrapper.innerHTML = '';
 
-  if (viewParam === 'small' || localStorage.getItem('view')==='small') {
+  if (viewParam === 'small') {
     searchedItemsArray.forEach(({ name, image1 }) => {
       addProductsSmall(name, image1);
     });
@@ -52,14 +52,14 @@ select?.addEventListener('change', e => {
 itemSmall?.addEventListener('click', () => {
   addToQueryParams('view', 'small');
   renderProducts();
-  itemSmall.style.backgroundColor='blue';
-  itemBig.style.backgroundColor='#36b0cb';
+  itemSmall.style.backgroundColor='$blue';
+  itemBig.style.backgroundColor='$main';
 });
 itemBig?.addEventListener('click', () => {
   addToQueryParams('view', 'big');
   renderProducts();
-  itemBig.style.backgroundColor='blue';
-  itemSmall.style.backgroundColor='#36b0cb';
+  itemBig.style.backgroundColor='$blue';
+  itemSmall.style.backgroundColor='$main';
 });
 
 renderProducts();

@@ -11,17 +11,18 @@ const orders = {
 
 export type SortOrder = keyof typeof orders | 'normal';
 
+
 export function itemSort(items: IGoods[]): IGoods[] {
+
   const currentUrl = new URLSearchParams(window.location.search);
   const sortParam = currentUrl.get('sort') as SortOrder | null;
-
+  let sortValue= sortParam? sortParam: 'normal' ;
+  select.value = sortValue;
   if (!sortParam || sortParam === 'normal' || !(sortParam in orders)) {
     return items;
   }
 
-  localStorage.setItem('sort', String(sortParam));
   return [...items].sort(orders[sortParam]);
 
 }
-let sortValue=localStorage.getItem('sort')? String(localStorage.getItem('sort')): 'normal' ;
-select.value = sortValue;
+
