@@ -9,4 +9,3 @@ export function itemSearch(items: IGoods[]): IGoods[] {
   return findParam ? items.filter(item => Object.values(item).some(el => String(el).includes(findParam))) : items;
 
 }
-

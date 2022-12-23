@@ -1,6 +1,5 @@
 import { IGoods } from '../../../helpers/item';
 import { addProducts, addProductsSmall } from './addProducts';
-import { Goodcart } from '../../goods/goods';
 
 export function smallSize(items: IGoods[]): void {
   const productsWrapper = document.querySelector('.good-items') as HTMLElement;

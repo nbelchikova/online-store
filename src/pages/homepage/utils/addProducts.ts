@@ -3,7 +3,10 @@ import { IGoods } from '../../../helpers/item';
 import { infoDetail } from './infoButton';
 import { infoDetailSmall } from './infoButton';
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 8617cb63bd6900c1d70832ef64034126fcfafba8
 export const addProducts = (
   title: string,
   src: string,
