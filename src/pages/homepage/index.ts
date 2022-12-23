@@ -27,15 +27,15 @@ const renderProducts = () => {
     searchedItemsArray.forEach(({ name, image1 }) => {
       addProductsSmall(name, image1);
     });
-    itemSmall.style.backgroundColor='blue';
-    itemBig.style.backgroundColor='#36b0cb';
+    itemSmall.style.backgroundColor='$blue';
+    itemBig.style.backgroundColor='$main';
 
   } else {
     searchedItemsArray.forEach(({ name, image1, brand, category, cost, warehouse }) => {
       addProducts(name, image1, brand, category, cost, warehouse);
     });
-    itemBig.style.backgroundColor='blue';
-    itemSmall.style.backgroundColor='#36b0cb';
+    itemBig.style.backgroundColor='$blue';
+    itemSmall.style.backgroundColor='$main';
 
   }
 
