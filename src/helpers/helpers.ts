@@ -17,3 +17,9 @@ export const createElement = (
 
   return element;
 };
+
+export const addToQueryParams = (key: string, value: string): void => {
+  const url = new URL(window.location.href);
+  url.searchParams.set(key, value);
+  window.history.replaceState(null, '', url);
+};
