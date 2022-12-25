@@ -1,14 +1,19 @@
 import './index.scss';
-import { itemsData } from '../../helpers/item';
-import { addProducts } from './utils/addProducts';
+
+import { itemsData, IGoods } from '../../helpers/item';
+import { addProducts, addProductsSmall } from './utils/addProducts';
 
 const leftArray = document.querySelector('.array-left-img') as HTMLElement | null;
+let arrData: IGoods[] = itemsData;
 
 const choose = document.querySelector('#choose') as HTMLInputElement | null;
 const select = document.querySelector('.cost-filter-select') as HTMLInputElement | null;
 const rightArray = document.querySelector('.array-right-img') as HTMLElement | null;
 const imgSlider = document.querySelectorAll<HTMLElement>('.slider-items-img');
-const goods = document.querySelectorAll<HTMLElement>('.good-items-info');
+
+const itemSmall = document.querySelector('.items-quantity-small') as HTMLElement | null;
+const itemBig = document.querySelector('.items-quantity-big') as HTMLElement | null;
+
 
 // add left slider
 
@@ -51,35 +56,93 @@ itemsData.forEach(({ name, image1, brand, category, cost, warehouse }) => {
 
 // add search
 
-choose?.addEventListener('input', () => {
-  for (let n = 0; n < itemsData.length; n++) {
-    if (!itemsData[n].name.includes(choose.value)) {
-      goods[n].style.display = 'none';
-    }
-
-    if (!choose.value) {
-      goods[n].style.display = 'block';
-    }
-  }
-});
-
-// add filter according cost
-select?.addEventListener('change', () => {
+function itemSearch(): void {
   const productsWrapper = document.querySelector('.good-items') as HTMLElement;
   productsWrapper.innerHTML = '';
+  let searchArray;
 
-  let filteredArray;
-
-  if (select.value === 'normal') {
-    filteredArray = itemsData;
+  if (!choose?.value) {
+    searchArray = arrData;
   } else {
-    filteredArray =
-      select.value === 'asc'
-        ? [...itemsData].sort((a, b) => a.cost - b.cost)
-        : [...itemsData].sort((a, b) => b.cost - a.cost);
+    let results = [];
+
+    for (let q = 0; q < arrData.length; q++) {
+      if (Object.values(arrData[q]).some(el => String(el).includes(choose.value))) {
+        results.push(arrData[q]);
+      }
+    }
+    searchArray = results;
+  }
+
+  searchArray.forEach(({ name, image1, brand, category, cost, warehouse }) => {
+    addProducts(name, image1, brand, category, cost, warehouse);
+  });
+  arrData = searchArray;
+  select?.addEventListener('change', priceFilter);
+  itemBig?.addEventListener('click', bigSize);
+  itemSmall?.addEventListener('click', smallSize);
+}
+
+choose?.addEventListener('input', itemSearch);
+
+// add filter according cost
+
+function priceFilter(): void {
+  const productsWrapper = document.querySelector('.good-items') as HTMLElement;
+  productsWrapper.innerHTML = '';
+  let filteredArray;
+  type SortOrder = 'ascWare' | 'descWare' | 'asc' | 'desc';
+  const orders= {
+    ascWare: (a: IGoods, b: IGoods) => a.warehouse - b.warehouse,
+    descWare: (a: IGoods, b: IGoods) => b.warehouse - a.warehouse,
+    asc: (a: IGoods, b: IGoods) => a.cost - b.cost,
+    desc: (a: IGoods, b: IGoods) => b.cost - a.cost
+  }
+  if (!select?.value) {
+    return;
+  }
+  if (select?.value === 'normal') {
+    filteredArray = arrData;
+  } else {
+    filteredArray = [...arrData].sort(orders[select.value as SortOrder]);
+
   }
 
   filteredArray.forEach(({ name, image1, brand, category, cost, warehouse }) => {
     addProducts(name, image1, brand, category, cost, warehouse);
   });
-});
+
+  arrData = filteredArray;
+  itemBig?.addEventListener('click', bigSize);
+  itemSmall?.addEventListener('click', smallSize);
+  choose?.addEventListener('input', itemSearch);
+}
+
+select?.addEventListener('change', priceFilter);
+
+// add small or big size
+
+function smallSize(): void {
+  const productsWrapper = document.querySelector('.good-items') as HTMLElement;
+  productsWrapper.innerHTML = '';
+
+  arrData.forEach(({ name, image1 }) => {
+    addProductsSmall(name, image1);
+  });
+  choose?.addEventListener('input', itemSearch);
+}
+
+itemSmall?.addEventListener('click', smallSize);
+
+function bigSize(): void {
+  const productsWrapper = document.querySelector('.good-items') as HTMLElement;
+  productsWrapper.innerHTML = '';
+
+  arrData.forEach(({ name, image1, brand, category, cost, warehouse }) => {
+    addProducts(name, image1, brand, category, cost, warehouse);
+  });
+  choose?.addEventListener('input', itemSearch);
+}
+
+itemBig?.addEventListener('click', bigSize);
+
