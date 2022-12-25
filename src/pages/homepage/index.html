@@ -47,64 +47,17 @@
         <section class="shop">
           <div class="shop-filter">
             <h3 class="shop-filter-title">Фильтр</h3>
-            <form class="form shop-filter-category" id="form1" action="">
+            <form class="form shop-filter-category" id="category-form" action="">
               <p class="p-filter" id="category">Категория</p>
-              <label for="tree" id="tree-label">
-                <input type="radio" id="tree" name="answer" value="tree" />Искусственные елки</label
-              >
-              <label for="ballon" id="ballon-label">
-                <input type="radio" id="ballon" name="answer" value="ballon" />Пластиковые и стеклянные шары</label
-              >
-              <label for="Electrolight" id="Electrolight-label">
-                <input type="radio" id="Electrolight" name="answer" value="Electrolight" />Электрогирлянды</label
-              >
-              <label for="decoration" id="decoration-label">
-                <input type="radio" id="decoration" name="answer" value="decoration" />Световой декор</label
-              >
-              <label for="costumes" id="costumes-label">
-                <input type="radio" id="costumes" name="answer" value="costumes" />Карнавальные костюмы</label
-              >
+              <div class="categories-wrapper"></div>
             </form>
             <form class="form shop-filter-brand" id="form2" action="">
               <p class="p-filter" id="brand">Brand</p>
-              <label for="Beatrees" id="Beatrees-label">
-                <input type="radio" id="Beatrees" name="answer" value="Beatrees" />Beatrees</label
-              >
-              <label for="Boltze" id="Boltze-label">
-                <input type="radio" id="Boltze" name="answer" value="Boltze" />Boltze</label
-              >
-              <label for="Bondibon" id="Bondibon-label">
-                <input type="radio" id="Bondibon" name="answer" value="Bondibon" />Bondibon</label
-              >
-              <label for="Breitner" id="Breitner-label">
-                <input type="radio" id="Breitner" name="answer" value="Breitner" />Breitner</label
-              >
-              <label for="Edelman" id="Edelman-label">
-                <input type="radio" id="Edelman" name="answer" value="Edelman" />Edelman</label
-              >
+              <div class="brands-wrapper"></div>
             </form>
-            <form class="form shop-filter-cost" id="form3" action="">
-              <p class="p-filter" id="cost">Стоимость</p>
-              <label for="cost500" id="cost500-label">
-                <input type="radio" id="cost500" name="answer" value="cost500" />0-500</label
-              >
-              <label for="cost1000" id="cost1000-label">
-                <input type="radio" id="cost1000" name="answer" value="cost1000" />500-1000</label
-              >
-              <label for="cost3000" id="cost3000-label">
-                <input type="radio" id="cost3000" name="answer" value="cost3000" />1000-3000</label
-              >
-              <label for="cost5000" id="cost5000">
-                <input type="radio" id="cost5000" name="answer" value="cost5000" />3000-5000</label
-              >
-              <label for="cost10000" id="cost10000-label">
-                <input type="radio" id="cost10000" name="answer" value="cost10000" />5000-10000</label
-              >
-            </form>
-            <button class="btn btn-filter" id="formButton">Выбрать</button>
+            <button class="btn btn-filter" id="formButton">Очистить</button>
           </div>
           <div class="shop-items">
-
             <div class="items-quantity">
               <div class="items-quantity-big">
                 <div></div>
@@ -125,7 +78,6 @@
               </div>
             </div>
 
-
             <div class="forms">
               <form class="cost-filter">
                 <select class="cost-filter-select" name="costfilter">
@@ -135,7 +87,6 @@
                   <option value="desc">По убыванию цены</option>
                   <option value="ascWare">Количество на складе ↑</option>
                   <option value="descWare">Количество на складе ↓</option>
-
                 </select>
               </form>
               <form class="form-input">
@@ -143,8 +94,7 @@
               </form>
             </div>
 
-            <div class="good-items">
-            </div>
+            <div class="good-items"></div>
           </div>
         </section>
       </div>

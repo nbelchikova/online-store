@@ -125,7 +125,6 @@ html {
   margin-right: 10px;
   margin-left: 10px;
   margin-bottom: 10px;
-
 }
 
 .info-title {
@@ -142,7 +141,6 @@ html {
   font-size: 15px;
   height: 80px;
 }
-
 
 .info-column {
   display: flex;
@@ -166,14 +164,14 @@ html {
   width: 100px;
   margin: 0 auto;
 }
+
 .info-btn {
   display: flex;
 }
+
 .info-btn2 {
   display: block;
 }
-
-
 
 .forms {
   display: flex;
@@ -187,6 +185,7 @@ html {
   margin: 20px auto;
   justify-content: space-around;
 }
+
 .items-quantity-small,
 .items-quantity-big {
   width: 80px;
@@ -196,7 +195,8 @@ html {
   flex-wrap: wrap;
   margin: 0 auto;
 }
-.items-quantity-big div{
+
+.items-quantity-big div {
   justify-content: space-between;
   width: 40px;
   height: 40px;
@@ -204,7 +204,7 @@ html {
   background-color: $white;
 }
 
-.items-quantity-small div{
+.items-quantity-small div {
   justify-content: space-between;
   width: 26.5px;
   height: 26.5px;
@@ -212,3 +212,9 @@ html {
   background-color: $white;
 }
 
+.categories-wrapper,
+.brands-wrapper {
+  display: flex;
+  flex-direction: column;
+  font-size: 15px;
+}
