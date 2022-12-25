@@ -1,11 +1,11 @@
 import './index.scss';
-import './utils/index';
 
 import { itemsData } from '../../helpers/item';
 import { addFiltersBrands, addFiltersCategories, addProducts, addProductsSmall } from './utils/addProducts';
 import { addToQueryParams } from '../../helpers/helpers';
 import { itemSort } from './utils/sort';
 import { itemSearch } from './utils/search';
+import { initSlider } from './utils/slider';
 
 const choose = document.querySelector('#choose') as HTMLInputElement | null;
 const select = document.querySelector('.cost-filter-select') as HTMLInputElement | null;
@@ -23,11 +23,11 @@ const renderProducts = () => {
 
   if (viewParam === 'small') {
     searchedItemsArray.forEach(({ name, image1 }) => {
-      addProductsSmall(name, image1);
+      addProductsSmall(name, image1, productsWrapper);
     });
   } else {
     searchedItemsArray.forEach(({ name, image1, brand, category, cost, warehouse }) => {
-      addProducts(name, image1, brand, category, cost, warehouse);
+      addProducts(name, image1, brand, category, cost, warehouse, productsWrapper);
     });
   }
 
@@ -52,4 +52,5 @@ itemBig?.addEventListener('click', () => {
   renderProducts();
 });
 
+initSlider();
 renderProducts();
