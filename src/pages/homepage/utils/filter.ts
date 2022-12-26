@@ -13,15 +13,15 @@ export function itemFilter(items: IGoods[]): IGoods[] {
   }
 
   if (brandParam) {
-    filteredItems = filteredItems.filter(item => item.brand === brandParam);
+    filteredItems = items.filter(item => item.brand === brandParam);
   }
 
   if (minPrice) {
-    filteredItems = filteredItems.filter(item => item.cost >= +minPrice || item.cost <= +maxPrice);
+    filteredItems = items.filter(item => item.cost >= +minPrice || item.cost <= +maxPrice);
   }
 
   if (minStock) {
-    filteredItems = filteredItems.filter(item => item.warehouse >= +minStock || item.warehouse <= +maxStock);
+    filteredItems = items.filter(item => item.warehouse >= +minStock || item.warehouse <= +maxStock);
   }
 
   return filteredItems;

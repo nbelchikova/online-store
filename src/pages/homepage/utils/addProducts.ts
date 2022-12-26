@@ -1,5 +1,8 @@
 import { createElement } from '../../../helpers/helpers';
 import { IGoods } from '../../../helpers/item';
+import { infoDetail } from './infoButton';
+import { infoDetailSmall } from './infoButton';
+
 
 export const addProducts = (
   title: string,
@@ -7,10 +10,10 @@ export const addProducts = (
   brand: string,
   category: string,
   cost: number,
-  quantity: number,
-  parent: HTMLElement
+  quantity: number
 ): void => {
-  const productWrapper = createElement('div', parent, ['good-items-info']);
+  const productsWrapper = document.querySelector('.good-items') as HTMLElement;
+  const productWrapper = createElement('div', productsWrapper, ['good-items-info']);
   createElement('h3', productWrapper, ['info-title'], title);
   const infoColumn = createElement('div', productWrapper, ['info-column']);
   const imageWrapper = createElement('div', infoColumn, ['info-column-image']);
@@ -28,10 +31,16 @@ export const addProducts = (
   const infoBtn = createElement('div', productWrapper, ['info-btn']);
   createElement('button', infoBtn, ['btn', 'btn-cart'], 'Добавить в корзину');
   createElement('button', infoBtn, ['btn', 'btn-details'], 'Информация');
+  const productsInfo = document.querySelectorAll<HTMLElement>('.btn.btn-details');
+  for (let g = 0; g < productsInfo.length; g++) {
+    productsInfo[g].addEventListener('click', infoDetail);
+  }
+
 };
 
-export const addProductsSmall = (title: string, src: string, parent: HTMLElement): void => {
-  const productWrapper = createElement('div', parent, ['good-items-info2']);
+export const addProductsSmall = (title: string, src: string): void => {
+  const productsWrapper = document.querySelector('.good-items') as HTMLElement;
+  const productWrapper = createElement('div', productsWrapper, ['good-items-info2']);
   createElement('h3', productWrapper, ['info-title2'], title);
   const infoColumn = createElement('div', productWrapper, ['info-column2']);
   const imageWrapper = createElement('div', infoColumn, ['info-column-image2']);
@@ -40,27 +49,37 @@ export const addProductsSmall = (title: string, src: string, parent: HTMLElement
   image.src = src;
   imageWrapper.appendChild(image);
 
-  const infoBtn = createElement('div', productWrapper, ['info-btn2']);
-  createElement('button', infoBtn, ['btn2', 'btn-cart'], 'Добавить в корзину');
-  createElement('button', infoBtn, ['btn2', 'btn-details'], 'Информация');
+  const infoBtn = createElement('div', productWrapper, ['info-btnGood']);
+  createElement('button', infoBtn, ['btnGood', 'btn-cart'], 'Добавить в корзину');
+  createElement('button', infoBtn, ['btnGood', 'btn-details'], 'Информация');
+  const productsInfo2 = document.querySelectorAll<HTMLElement>('.btnGood.btn-details');
+  for (let g = 0; g < productsInfo2.length; g++) {
+    productsInfo2[g].addEventListener('click', infoDetailSmall);
+};
 };
 
 export const createLabelWithInput = (inputId: string, filterType: string, wrapperSelector: string): void => {
-  const id = inputId.split(' ').join('-');
-
   const productsWrapper = document.querySelector(wrapperSelector) as HTMLElement;
-  productsWrapper.insertAdjacentHTML(
-    'beforeend',
-    `<label for=${id} id=${id}-label><input type="radio" id=${id} name=${filterType} value=${id}>
-    <span>${inputId}</span></label>`
-  );
+  const label = document.createElement('label');
+  label.setAttribute('for', inputId);
+  label.setAttribute('id', `${inputId}-label`);
+  productsWrapper.appendChild(label);
+  const input = document.createElement('input');
+  input.setAttribute('type', 'radio');
+  input.setAttribute('name', filterType);
+  input.setAttribute('id', inputId);
+  input.setAttribute('value', inputId);
+  label.appendChild(input);
+  const text = document.createElement('span');
+  text.innerText = inputId;
+  label.appendChild(text);
 };
 
 export const addFiltersCategories = (items: IGoods[]): void => {
   const productsWrapper = document.querySelector('.categories-wrapper') as HTMLElement;
   productsWrapper.innerHTML = '';
 
-  const categories = new Set(items.map(item => item.category));
+  const categories = [...new Set(items.map(item => item.category))];
 
   categories.forEach(category => {
     createLabelWithInput(category, 'category', '.categories-wrapper');
@@ -71,7 +90,7 @@ export const addFiltersBrands = (items: IGoods[]): void => {
   const productsWrapper = document.querySelector('.brands-wrapper') as HTMLElement;
   productsWrapper.innerHTML = '';
 
-  const brands = new Set(items.map(item => item.brand));
+  const brands = [...new Set(items.map(item => item.brand))];
 
   brands.forEach(brand => {
     createLabelWithInput(brand, 'brand', '.brands-wrapper');

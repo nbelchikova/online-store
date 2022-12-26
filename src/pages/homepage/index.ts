@@ -1,16 +1,16 @@
 import './index.scss';
+import './utils/index';
 
 import { itemsData } from '../../helpers/item';
 import { addFiltersBrands, addFiltersCategories, addProducts, addProductsSmall } from './utils/addProducts';
 import { addToQueryParams } from '../../helpers/helpers';
 import { itemSort } from './utils/sort';
 import { itemSearch } from './utils/search';
-import { initSlider } from './utils/slider';
 
 const choose = document.querySelector('#choose') as HTMLInputElement | null;
 const select = document.querySelector('.cost-filter-select') as HTMLInputElement | null;
-const itemSmall = document.querySelector('.items-quantity-small') as HTMLElement | null;
-const itemBig = document.querySelector('.items-quantity-big') as HTMLElement | null;
+const itemSmall = document.querySelector('.items-quantity-small') as HTMLElement;
+const itemBig = document.querySelector('.items-quantity-big') as HTMLElement;
 const productsWrapper = document.querySelector('.good-items') as HTMLElement;
 
 const renderProducts = () => {
@@ -21,14 +21,26 @@ const renderProducts = () => {
 
   productsWrapper.innerHTML = '';
 
+
   if (viewParam === 'small') {
+
     searchedItemsArray.forEach(({ name, image1 }) => {
-      addProductsSmall(name, image1, productsWrapper);
+      addProductsSmall(name, image1);
     });
+    itemSmall.classList.add('blueSize');
+    itemBig.classList.add('mainSize');
+    itemSmall.classList.remove('mainSize');
+    itemBig.classList.remove('blueSize');
+
   } else {
     searchedItemsArray.forEach(({ name, image1, brand, category, cost, warehouse }) => {
-      addProducts(name, image1, brand, category, cost, warehouse, productsWrapper);
+      addProducts(name, image1, brand, category, cost, warehouse);
     });
+    itemBig.classList.add('blueSize');
+    itemSmall.classList.add('mainSize');
+    itemSmall.classList.remove('blueSize');
+    itemBig.classList.remove('mainSize');
+
   }
 
   addFiltersCategories(searchedItemsArray);
@@ -46,11 +58,24 @@ select?.addEventListener('change', e => {
 itemSmall?.addEventListener('click', () => {
   addToQueryParams('view', 'small');
   renderProducts();
+
+  itemSmall.classList.add('blueSize')
+  itemBig.classList.add('mainSize')
+  itemSmall.classList.remove('mainSize');
+  itemBig.classList.remove('blueSize');
+
 });
 itemBig?.addEventListener('click', () => {
   addToQueryParams('view', 'big');
   renderProducts();
+
+  itemBig.classList.add('blueSize');
+  itemSmall.classList.add('mainSize');
+  itemSmall.classList.remove('blueSize');
+  itemBig.classList.remove('mainSize');
+
 });
 
-initSlider();
 renderProducts();
+
+
