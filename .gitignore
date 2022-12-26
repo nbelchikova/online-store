@@ -29,9 +29,7 @@ node_modules/
 
 # Build results
 dist
-<<<<<<< HEAD
-=======
 
 **/*.css
 **/*.css.map
->>>>>>> 8617cb63bd6900c1d70832ef64034126fcfafba8
+

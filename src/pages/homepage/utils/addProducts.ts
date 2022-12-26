@@ -3,10 +3,7 @@ import { IGoods } from '../../../helpers/item';
 import { infoDetail } from './infoButton';
 import { infoDetailSmall } from './infoButton';
 
-<<<<<<< HEAD
 
-=======
->>>>>>> 8617cb63bd6900c1d70832ef64034126fcfafba8
 export const addProducts = (
   title: string,
   src: string,
@@ -34,8 +31,11 @@ export const addProducts = (
   const infoBtn = createElement('div', productWrapper, ['info-btn']);
   createElement('button', infoBtn, ['btn', 'btn-cart'], 'Добавить в корзину');
   createElement('button', infoBtn, ['btn', 'btn-details'], 'Информация');
+  const productsInfo = document.querySelectorAll<HTMLElement>('.btn.btn-details');
+  for (let g = 0; g < productsInfo.length; g++) {
+    productsInfo[g].addEventListener('click', infoDetail);
+  }
 
-  infoDetail();
 };
 
 export const addProductsSmall = (title: string, src: string): void => {
@@ -49,10 +49,13 @@ export const addProductsSmall = (title: string, src: string): void => {
   image.src = src;
   imageWrapper.appendChild(image);
 
-  const infoBtn = createElement('div', productWrapper, ['info-btn2']);
-  createElement('button', infoBtn, ['btn2', 'btn-cart'], 'Добавить в корзину');
-  createElement('button', infoBtn, ['btn2', 'btn-details'], 'Информация');
-  infoDetailSmall();
+  const infoBtn = createElement('div', productWrapper, ['info-btnGood']);
+  createElement('button', infoBtn, ['btnGood', 'btn-cart'], 'Добавить в корзину');
+  createElement('button', infoBtn, ['btnGood', 'btn-details'], 'Информация');
+  const productsInfo2 = document.querySelectorAll<HTMLElement>('.btnGood.btn-details');
+  for (let g = 0; g < productsInfo2.length; g++) {
+    productsInfo2[g].addEventListener('click', infoDetailSmall);
+};
 };
 
 export const createLabelWithInput = (inputId: string, filterType: string, wrapperSelector: string): void => {

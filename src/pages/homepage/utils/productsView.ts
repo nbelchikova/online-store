@@ -8,8 +8,6 @@ export function smallSize(items: IGoods[]): void {
   items.forEach(({ name, image1 }) => {
     addProductsSmall(name, image1);
   });
-
-
 }
 
 export function bigSize(items: IGoods[]): void {
@@ -19,7 +17,5 @@ export function bigSize(items: IGoods[]): void {
   items.forEach(({ name, image1, brand, category, cost, warehouse }) => {
     addProducts(name, image1, brand, category, cost, warehouse);
   });
-
-
 }
 
