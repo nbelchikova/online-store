@@ -1,5 +1,6 @@
 import { createElement } from '../../../helpers/helpers';
 import { IGoods } from '../../../helpers/item';
+import { infoDetail, infoDetailSmall } from './infoButton';
 
 export const addProducts = (
   title: string,
@@ -7,10 +8,10 @@ export const addProducts = (
   brand: string,
   category: string,
   cost: number,
-  quantity: number,
-  parent: HTMLElement
+  quantity: number
 ): void => {
-  const productWrapper = createElement('div', parent, ['good-items-info']);
+  const productsWrapper = document.querySelector('.good-items') as HTMLElement;
+  const productWrapper = createElement('div', productsWrapper, ['good-items-info']);
   createElement('h3', productWrapper, ['info-title'], title);
   const infoColumn = createElement('div', productWrapper, ['info-column']);
   const imageWrapper = createElement('div', infoColumn, ['info-column-image']);
@@ -28,10 +29,16 @@ export const addProducts = (
   const infoBtn = createElement('div', productWrapper, ['info-btn']);
   createElement('button', infoBtn, ['btn', 'btn-cart'], 'Добавить в корзину');
   createElement('button', infoBtn, ['btn', 'btn-details'], 'Информация');
+  const productsInfo = document.querySelectorAll<HTMLElement>('.btn.btn-details');
+
+  for (let g = 0; g < productsInfo.length; g++) {
+    productsInfo[g].addEventListener('click', infoDetail);
+  }
 };
 
-export const addProductsSmall = (title: string, src: string, parent: HTMLElement): void => {
-  const productWrapper = createElement('div', parent, ['good-items-info2']);
+export const addProductsSmall = (title: string, src: string): void => {
+  const productsWrapper = document.querySelector('.good-items') as HTMLElement;
+  const productWrapper = createElement('div', productsWrapper, ['good-items-info2']);
   createElement('h3', productWrapper, ['info-title2'], title);
   const infoColumn = createElement('div', productWrapper, ['info-column2']);
   const imageWrapper = createElement('div', infoColumn, ['info-column-image2']);
@@ -40,9 +47,14 @@ export const addProductsSmall = (title: string, src: string, parent: HTMLElement
   image.src = src;
   imageWrapper.appendChild(image);
 
-  const infoBtn = createElement('div', productWrapper, ['info-btn2']);
-  createElement('button', infoBtn, ['btn2', 'btn-cart'], 'Добавить в корзину');
-  createElement('button', infoBtn, ['btn2', 'btn-details'], 'Информация');
+  const infoBtn = createElement('div', productWrapper, ['info-btn-good']);
+  createElement('button', infoBtn, ['btn-good', 'btn-cart'], 'Добавить в корзину');
+  createElement('button', infoBtn, ['btn-good', 'btn-details'], 'Информация');
+  const productsInfo2 = document.querySelectorAll<HTMLElement>('.btn-good.btn-details');
+
+  for (let g = 0; g < productsInfo2.length; g++) {
+    productsInfo2[g].addEventListener('click', infoDetailSmall);
+  }
 };
 
 export const createFilterItem = (

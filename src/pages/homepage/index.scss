@@ -93,7 +93,7 @@ html {
   height: 20px;
 }
 
-.btn2 {
+.btn-good {
   width: 100%;
   margin: 10px auto;
   background-color: $main;
@@ -103,7 +103,7 @@ html {
   height: 20px;
 }
 
-.no-products{
+.no-products {
   display: none;
   align-items: center;
   justify-content: center;
@@ -130,7 +130,7 @@ html {
 .good-items-info {
   width: 326px;
   border: 2px solid $main;
-  height: 300px;
+  height: 330px;
   margin-right: 10px;
   margin-left: 10px;
   margin-bottom: 10px;
@@ -149,6 +149,7 @@ html {
   text-align: center;
   text-decoration: underline;
   color: $main;
+  height: 80px;
 }
 
 .info-title2 {
@@ -187,7 +188,7 @@ html {
   display: flex;
 }
 
-.info-btn2 {
+.info-btn-good {
   display: block;
 }
 
@@ -237,9 +238,9 @@ html {
   font-size: 15px;
 }
 
-.shop-items-header{
-display: flex;
-flex-direction: column;
+.shop-items-header {
+  display: flex;
+  flex-direction: column;
 }
 
 .range-slider {
@@ -249,7 +250,7 @@ flex-direction: column;
   height: 40px;
   margin-top: 40px;
 
-  &>div>.range-slider-tooltip {
+  & > div > .range-slider-tooltip {
     z-index: 2;
     position: absolute;
     top: -46px;
@@ -261,28 +262,25 @@ flex-direction: column;
     color: $white;
     text-align: center;
 
-
-    &:after {
-      content: "";
+    &::after {
+      content: '';
       position: absolute;
       left: 0;
       top: 22px;
       border-left: 16px solid transparent;
       border-right: 16px solid transparent;
-      border-top-width: 16px;
-      border-top-style: solid;
-      border-top-color: $main;
+      border-top-width: 16px solid $main;
       border-radius: 16px;
     }
 
-    &>span {
+    & > span {
       font-size: 12px;
       font-weight: 700;
       line-height: 28px;
     }
   }
 
-  &>input[type="range"] {
+  & > input[type='range'] {
     z-index: 1;
     position: absolute;
     width: 100%;
@@ -291,10 +289,10 @@ flex-direction: column;
     filter: alpha(opacity=0);
     cursor: pointer;
     pointer-events: none;
-    -webkit-appearance: none;
+    appearance: none;
   }
 
-  &>div {
+  & > div {
     position: absolute;
     display: flex;
     align-items: center;
@@ -302,13 +300,13 @@ flex-direction: column;
     right: 20px;
     height: 16px;
 
-    &>.range-slider-val-left,
-    &>.range-slider-val-right,
-    &>.range-slider-val-range {
+    & > .range-slider-val-left,
+    & > .range-slider-val-right,
+    & > .range-slider-val-range {
       height: 10px;
     }
 
-    &>.range-slider-val-left {
+    & > .range-slider-val-left {
       position: absolute;
       left: 0;
       border-radius: 10px;
@@ -316,7 +314,7 @@ flex-direction: column;
       margin: 0 7px;
     }
 
-    &>.range-slider-val-right {
+    & > .range-slider-val-right {
       position: absolute;
       right: 0;
       margin: 0 7px;
@@ -324,7 +322,7 @@ flex-direction: column;
       background-color: $grey;
     }
 
-    &>.range-slider-val-range {
+    & > .range-slider-val-range {
       position: absolute;
       left: 0;
       top: -1px;
@@ -333,7 +331,7 @@ flex-direction: column;
       background-color: $main;
     }
 
-    &>.range-slider-handle {
+    & > .range-slider-handle {
       z-index: 1;
       position: absolute;
       top: -5px;
@@ -343,20 +341,18 @@ flex-direction: column;
       border-radius: 25%;
       background-color: $white;
       text-align: left;
-
       outline: none;
       cursor: pointer;
     }
   }
 }
 
-
-div.range-slider>input[type="range"] {
+div.range-slider > input[type='range'] {
   &::-ms-thumb {
     width: 24px;
     height: 24px;
     border: 0 none;
-    border-radius: 0px;
+    border-radius: 0;
     pointer-events: all;
   }
 
@@ -364,7 +360,7 @@ div.range-slider>input[type="range"] {
     width: 24px;
     height: 24px;
     border: 0 none;
-    border-radius: 0px;
+    border-radius: 0;
     pointer-events: all;
   }
 
@@ -372,9 +368,9 @@ div.range-slider>input[type="range"] {
     width: 24px;
     height: 24px;
     border: 0 none;
-    border-radius: 0px;
+    border-radius: 0;
     pointer-events: all;
-    -webkit-appearance: none;
+    appearance: none;
   }
 
   &::-ms-fill-lower {
@@ -390,13 +386,13 @@ div.range-slider>input[type="range"] {
   &::-ms-track {
     background: transparent;
     color: transparent;
-    -webkit-appearance: none;
+    appearance: none;
   }
 
   &::-moz-range-track {
     background: transparent;
     color: transparent;
-    -moz-appearance: none;
+    appearance: none;
   }
 
   &:focus::-webkit-slider-runnable-track {
@@ -410,5 +406,13 @@ div.range-slider>input[type="range"] {
 
   &::-ms-tooltip {
     display: none;
+  }
+
+  .blue-size {
+    background-color: $blue;
+  }
+
+  .main-size {
+    background-color: $main;
   }
 }

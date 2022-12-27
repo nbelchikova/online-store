@@ -7,8 +7,8 @@ const choose = document.querySelector('#choose') as HTMLInputElement | null;
 const select = document.querySelector('.cost-filter-select') as HTMLInputElement | null;
 const categoryFilter = document.querySelector('#category-form') as HTMLInputElement | null;
 const brandFilter = document.querySelector('#brand-form') as HTMLInputElement | null;
-const itemSmall = document.querySelector('.items-quantity-small') as HTMLElement | null;
-const itemBig = document.querySelector('.items-quantity-big') as HTMLElement | null;
+const itemSmall = document.querySelector('.items-quantity-small') as HTMLElement;
+const itemBig = document.querySelector('.items-quantity-big') as HTMLElement;
 const costSliderLeftInput = document.querySelector(
   '#CostRangeSlider .range-slider-input-left'
 ) as HTMLInputElement | null;
@@ -55,10 +55,18 @@ select?.addEventListener('change', e => {
 itemSmall?.addEventListener('click', () => {
   addToQueryParams('view', 'small');
   renderPageElements();
+  itemSmall.classList.add('blue-size');
+  itemBig.classList.add('main-size');
+  itemSmall.classList.remove('main-size');
+  itemBig.classList.remove('blue-size');
 });
 itemBig?.addEventListener('click', () => {
   addToQueryParams('view', 'big');
   renderPageElements();
+  itemBig.classList.add('blue-size');
+  itemSmall.classList.add('main-size');
+  itemSmall.classList.remove('blue-size');
+  itemBig.classList.remove('main-size');
 });
 costSliderLeftInput?.addEventListener('change', () => {
   addToQueryParams('price', `${costMinValueWrapper?.innerText}-${costMaxValueWrapper?.innerText}`);

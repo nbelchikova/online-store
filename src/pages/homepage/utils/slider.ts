@@ -2,7 +2,7 @@ const rightArray = document.querySelector('.array-right-img') as HTMLElement | n
 const imgSlider = document.querySelectorAll<HTMLElement>('.slider-items-img');
 const leftArray = document.querySelector('.array-left-img') as HTMLElement | null;
 
-export const initSlider = () => {
+export const initSlider = (): void => {
   // add left slider
 
   let i = 0;

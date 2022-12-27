@@ -12,18 +12,27 @@ export const renderProducts = (): void => {
   const viewParam = currentUrl.get('view');
   const sortedItemsArray = itemSort(itemsData);
   const searchedItemsArray = itemSearch(sortedItemsArray);
-  const filteredItemsArray = itemFilter(searchedItemsArray);
+  const itemSmall = document.querySelector('.items-quantity-small') as HTMLElement;
+  const itemBig = document.querySelector('.items-quantity-big') as HTMLElement;
 
   productsWrapper.innerHTML = '';
 
   if (viewParam === 'small') {
-    filteredItemsArray.forEach(({ name, image1 }) => {
-      addProductsSmall(name, image1, productsWrapper);
+    searchedItemsArray.forEach(({ name, image1 }) => {
+      addProductsSmall(name, image1);
     });
+    itemSmall.classList.add('blue-size');
+    itemBig.classList.add('main-size');
+    itemSmall.classList.remove('main-size');
+    itemBig.classList.remove('blue-size');
   } else {
-    filteredItemsArray.forEach(({ name, image1, brand, category, cost, warehouse }) => {
-      addProducts(name, image1, brand, category, cost, warehouse, productsWrapper);
+    searchedItemsArray.forEach(({ name, image1, brand, category, cost, warehouse }) => {
+      addProducts(name, image1, brand, category, cost, warehouse);
     });
+    itemBig.classList.add('blue-size');
+    itemSmall.classList.add('main-size');
+    itemSmall.classList.remove('blue-size');
+    itemBig.classList.remove('main-size');
   }
 };
 
