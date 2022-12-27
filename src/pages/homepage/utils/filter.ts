@@ -6,10 +6,10 @@ export function itemFilter(items: IGoods[]): IGoods[] {
   const categoryParam = currentUrl.get('category');
   const brandParam = currentUrl.get('brand');
   const [minPrice, maxPrice] = currentUrl.get('price')?.split('-') || [];
-  const [minStock, maxStock] = currentUrl.get('stock')?.split('-') || [];
+  const [minStock, maxStock] = currentUrl.get('warehouse')?.split('-') || [];
 
   if (categoryParam) {
-    filteredItems = items.filter(item => item.category === categoryParam);
+    filteredItems = items.filter(item => item.category === categoryParam.split('-').join(' '));
   }
 
   if (brandParam) {
@@ -17,11 +17,13 @@ export function itemFilter(items: IGoods[]): IGoods[] {
   }
 
   if (minPrice) {
-    filteredItems = filteredItems.filter(item => item.cost >= +minPrice || item.cost <= +maxPrice);
+    filteredItems = filteredItems.filter(item => {
+      return item.cost >= +minPrice && item.cost <= +maxPrice;
+    });
   }
 
   if (minStock) {
-    filteredItems = filteredItems.filter(item => item.warehouse >= +minStock || item.warehouse <= +maxStock);
+    filteredItems = filteredItems.filter(item => item.warehouse >= +minStock && item.warehouse <= +maxStock);
   }
 
   return filteredItems;

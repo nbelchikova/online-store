@@ -45,35 +45,44 @@ export const addProductsSmall = (title: string, src: string, parent: HTMLElement
   createElement('button', infoBtn, ['btn2', 'btn-details'], 'Информация');
 };
 
-export const createLabelWithInput = (inputId: string, filterType: string, wrapperSelector: string): void => {
-  const id = inputId.split(' ').join('-');
-
+export const createFilterItem = (
+  inputId: string | number,
+  filterType: string,
+  wrapperSelector: string,
+  checked?: boolean,
+  possibleItems?: number,
+  allItems?: number
+): void => {
   const productsWrapper = document.querySelector(wrapperSelector) as HTMLElement;
+  const checkFlag = checked ? 'checked' : '';
   productsWrapper.insertAdjacentHTML(
     'beforeend',
-    `<label for=${id} id=${id}-label><input type="radio" id=${id} name=${filterType} value=${id}>
-    <span>${inputId}</span></label>`
+    `<div class='filter-item'>
+    <label for="${inputId}" id="${inputId}-label">
+    <input type="radio" id="${inputId}" name="${filterType}" value="${inputId}" ${checkFlag}>
+    ${inputId}</label>
+    <p>${possibleItems}/${allItems}</p>
+    </div>`
   );
 };
 
-export const addFiltersCategories = (items: IGoods[]): void => {
-  const productsWrapper = document.querySelector('.categories-wrapper') as HTMLElement;
-  productsWrapper.innerHTML = '';
+export const addFilter = (
+  filterType: string,
+  filterWrapperClass: string,
+  items: IGoods[],
+  filterParam: string | null,
+  filteredItems: IGoods[]
+): void => {
+  const filterWrapper = document.querySelector(filterWrapperClass) as HTMLElement;
+  filterWrapper.innerHTML = '';
 
-  const categories = new Set(items.map(item => item.category));
+  const filterItems = new Set(items.map(item => item[filterType as keyof IGoods]));
 
-  categories.forEach(category => {
-    createLabelWithInput(category, 'category', '.categories-wrapper');
-  });
-};
+  filterItems.forEach(filterItem => {
+    const isChecked = filterItem === filterParam;
+    const allItems = items.filter(item => item[filterType as keyof IGoods] === filterItem).length;
+    const possibleItems = filteredItems.filter(item => item[filterType as keyof IGoods] === filterItem).length;
 
-export const addFiltersBrands = (items: IGoods[]): void => {
-  const productsWrapper = document.querySelector('.brands-wrapper') as HTMLElement;
-  productsWrapper.innerHTML = '';
-
-  const brands = new Set(items.map(item => item.brand));
-
-  brands.forEach(brand => {
-    createLabelWithInput(brand, 'brand', '.brands-wrapper');
+    createFilterItem(filterItem, filterType, filterWrapperClass, isChecked, possibleItems, allItems);
   });
 };
