@@ -13,6 +13,7 @@ const baseConfig = {
     index: './src/pages/homepage/index.ts',
     shoppingCart: './src/pages/cart/shoppingCart.ts',
     goods: './src/pages/goods/goods.ts',
+    page404: './src/pages/page404/404.ts',
   },
   output: {
     filename: '[name].[contenthash].js',
@@ -66,6 +67,14 @@ const baseConfig = {
       template: './src/pages/goods/goods.html',
       filename: 'goods.html',
       chunks: ['goods'],
+      inject: 'body',
+      minify: false,
+      scriptLoading: 'blocking',
+    }),
+    new HtmlWebpackPlugin({
+      template: './src/pages/page404/404.html',
+      filename: '404.html',
+      chunks: ['page404'],
       inject: 'body',
       minify: false,
       scriptLoading: 'blocking',
