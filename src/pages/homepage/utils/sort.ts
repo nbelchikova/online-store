@@ -1,4 +1,5 @@
 import { IGoods } from '../../../helpers/item';
+
 const select = document.querySelector('.cost-filter-select') as HTMLInputElement;
 
 const orders = {
@@ -10,13 +11,10 @@ const orders = {
 
 export type SortOrder = keyof typeof orders | 'normal';
 
-
-
 export function itemSort(items: IGoods[]): IGoods[] {
-
   const currentUrl = new URLSearchParams(window.location.search);
   const sortParam = currentUrl.get('sort') as SortOrder | null;
-  let sortValue= sortParam? sortParam: 'normal' ;
+  const sortValue = sortParam || 'normal';
   select.value = sortValue;
 
   if (!sortParam || sortParam === 'normal' || !(sortParam in orders)) {
@@ -24,5 +22,4 @@ export function itemSort(items: IGoods[]): IGoods[] {
   }
 
   return [...items].sort(orders[sortParam]);
-
 }

@@ -18,4 +18,3 @@ export function bigSize(items: IGoods[]): void {
     addProducts(name, image1, brand, category, cost, warehouse);
   });
 }
-

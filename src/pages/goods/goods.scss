@@ -1,7 +1,9 @@
 @import '../../styles/index';
+
 .card {
   margin: 110px auto;
 }
+
 .card-info {
   display: block;
   margin: 0 auto;
@@ -63,12 +65,14 @@
   font-size: 15px;
   margin-bottom: 30px;
 }
+
 .info-btn {
   display: flex;
   width: 100%;
   justify-content: space-around;
   margin-top: 50px;
 }
+
 .btn-cart,
 .btn-now {
   background-color: $main;
@@ -77,11 +81,13 @@
   border: $main 1px solid;
   height: 50px;
 }
+
 .path {
   text-align: center;
-  margin: 110px auto 30px auto;
+  margin: 110px auto 30px;
   padding-top: 100px;
 }
+
 .path a {
   font-size: 30px;
   font-size: $main;

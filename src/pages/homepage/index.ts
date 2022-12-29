@@ -1,81 +1,105 @@
-import './index.scss';
-import './utils/index';
-
-import { itemsData } from '../../helpers/item';
-import { addFiltersBrands, addFiltersCategories, addProducts, addProductsSmall } from './utils/addProducts';
 import { addToQueryParams } from '../../helpers/helpers';
-import { itemSort } from './utils/sort';
-import { itemSearch } from './utils/search';
+import './index.scss';
+import { renderPageElements } from './utils/renderPageElements';
+import { initSlider } from './utils/slider';
 
 const choose = document.querySelector('#choose') as HTMLInputElement | null;
 const select = document.querySelector('.cost-filter-select') as HTMLInputElement | null;
+const categoryFilter = document.querySelector('#category-form') as HTMLInputElement | null;
+const brandFilter = document.querySelector('#brand-form') as HTMLInputElement | null;
 const itemSmall = document.querySelector('.items-quantity-small') as HTMLElement;
 const itemBig = document.querySelector('.items-quantity-big') as HTMLElement;
-const productsWrapper = document.querySelector('.good-items') as HTMLElement;
+const costSliderLeftInput = document.querySelector(
+  '#CostRangeSlider .range-slider-input-left'
+) as HTMLInputElement | null;
+const costSliderRightInput = document.querySelector(
+  '#CostRangeSlider .range-slider-input-right'
+) as HTMLInputElement | null;
+const clearButton = document.querySelector('.clear-btn') as HTMLElement;
+const copyButton = document.querySelector('.copy-btn') as HTMLElement;
+const costMaxValueWrapper = document.querySelector(
+  '#CostRangeSlider .range-slider-tooltip-right .range-slider-tooltip-text'
+) as HTMLElement | null;
+const costMinValueWrapper = document.querySelector(
+  '#CostRangeSlider .range-slider-tooltip-left .range-slider-tooltip-text'
+) as HTMLElement | null;
+const warehouseSliderLeftInput = document.querySelector(
+  '#WarehouseRangeSlider .range-slider-input-left'
+) as HTMLInputElement | null;
+const warehouseSliderRightInput = document.querySelector(
+  '#WarehouseRangeSlider .range-slider-input-right'
+) as HTMLInputElement | null;
+const warehouseMaxValueWrapper = document.querySelector(
+  '#WarehouseRangeSlider .range-slider-tooltip-right .range-slider-tooltip-text'
+) as HTMLElement | null;
+const warehouseMinValueWrapper = document.querySelector(
+  '#WarehouseRangeSlider .range-slider-tooltip-left .range-slider-tooltip-text'
+) as HTMLElement | null;
 
-const renderProducts = () => {
-  const currentUrl = new URLSearchParams(window.location.search);
-  const viewParam = currentUrl.get('view');
-  const sortedItemsArray = itemSort(itemsData);
-  const searchedItemsArray = itemSearch(sortedItemsArray);
-
-  productsWrapper.innerHTML = '';
-
-
-  if (viewParam === 'small') {
-
-    searchedItemsArray.forEach(({ name, image1 }) => {
-      addProductsSmall(name, image1);
-    });
-    itemSmall.classList.add('blueSize');
-    itemBig.classList.add('mainSize');
-    itemSmall.classList.remove('mainSize');
-    itemBig.classList.remove('blueSize');
-
-  } else {
-    searchedItemsArray.forEach(({ name, image1, brand, category, cost, warehouse }) => {
-      addProducts(name, image1, brand, category, cost, warehouse);
-    });
-    itemBig.classList.add('blueSize');
-    itemSmall.classList.add('mainSize');
-    itemSmall.classList.remove('blueSize');
-    itemBig.classList.remove('mainSize');
-
-  }
-
-  addFiltersCategories(searchedItemsArray);
-  addFiltersBrands(searchedItemsArray);
-};
-
+categoryFilter?.addEventListener('change', e => {
+  addToQueryParams('category', (e.target as HTMLInputElement)?.value);
+  renderPageElements();
+});
+brandFilter?.addEventListener('change', e => {
+  addToQueryParams('brand', (e.target as HTMLInputElement)?.value);
+  renderPageElements();
+});
 choose?.addEventListener('input', e => {
   addToQueryParams('find', (e.target as HTMLInputElement)?.value);
-  renderProducts();
+  renderPageElements();
 });
 select?.addEventListener('change', e => {
   addToQueryParams('sort', (e.target as HTMLInputElement)?.value);
-  renderProducts();
+  renderPageElements();
 });
 itemSmall?.addEventListener('click', () => {
   addToQueryParams('view', 'small');
-  renderProducts();
-
-  itemSmall.classList.add('blueSize')
-  itemBig.classList.add('mainSize')
-  itemSmall.classList.remove('mainSize');
-  itemBig.classList.remove('blueSize');
-
+  renderPageElements();
+  itemSmall.classList.add('blue-size');
+  itemBig.classList.add('main-size');
+  itemSmall.classList.remove('main-size');
+  itemBig.classList.remove('blue-size');
 });
 itemBig?.addEventListener('click', () => {
   addToQueryParams('view', 'big');
-  renderProducts();
+  renderPageElements();
+  itemBig.classList.add('blue-size');
+  itemSmall.classList.add('main-size');
+  itemSmall.classList.remove('blue-size');
+  itemBig.classList.remove('main-size');
+});
+costSliderLeftInput?.addEventListener('change', () => {
+  addToQueryParams('price', `${costMinValueWrapper?.innerText}-${costMaxValueWrapper?.innerText}`);
+  renderPageElements();
+});
+costSliderRightInput?.addEventListener('change', () => {
+  addToQueryParams('price', `${costMinValueWrapper?.innerText}-${costMaxValueWrapper?.innerText}`);
+  renderPageElements();
+});
+warehouseSliderLeftInput?.addEventListener('change', () => {
+  addToQueryParams('warehouse', `${warehouseMinValueWrapper?.innerText}-${warehouseMaxValueWrapper?.innerText}`);
+  renderPageElements();
+});
+warehouseSliderRightInput?.addEventListener('change', () => {
+  addToQueryParams('warehouse', `${warehouseMinValueWrapper?.innerText}-${warehouseMaxValueWrapper?.innerText}`);
+  renderPageElements();
+});
+clearButton?.addEventListener('click', () => {
+  const url = new URL(window.location.href);
 
-  itemBig.classList.add('blueSize');
-  itemSmall.classList.add('mainSize');
-  itemSmall.classList.remove('blueSize');
-  itemBig.classList.remove('mainSize');
-
+  [...url.searchParams.keys()].forEach(key => url.searchParams.delete(key));
+  window.history.replaceState(null, '', url);
+  renderPageElements();
+});
+copyButton?.addEventListener('click', () => {
+  const copytext = document.createElement('input');
+  copytext.value = window.location.href;
+  document.body.appendChild(copytext);
+  copytext.select();
+  document.execCommand('copy');
+  document.body.removeChild(copytext);
+  copyButton.style.backgroundColor = 'grey';
 });
 
-renderProducts();
-
-
+initSlider();
+renderPageElements();

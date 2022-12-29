@@ -1,1 +1,1 @@
-export const routeGood = 'goods.html'
+export const routeGood = 'goods.html';
