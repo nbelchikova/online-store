@@ -1,0 +1,87 @@
+.formes-container .field-container:first-of-type {
+  grid-area: name;
+}
+
+.formes-container .field-container:nth-of-type(2) {
+  grid-area: number;
+}
+
+.formes-container .field-container:nth-of-type(3) {
+  grid-area: expiration;
+}
+
+.formes-container .field-container:nth-of-type(4) {
+  grid-area: security;
+}
+
+.field-container input {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.field-container {
+  position: relative;
+}
+
+.formes-container {
+  position: fixed;
+  top: 200px;
+  left: 40%;
+  display: grid;
+  grid-column-gap: 10px;
+  grid-template-columns: auto auto;
+  grid-template-rows: 90px 90px 90px;
+  grid-template-areas: 'name name' 'number number' 'expiration security';
+  max-width: 400px;
+  padding: 20px;
+  color: $white;
+  background-color: $main;
+}
+
+.field-container label {
+  padding-bottom: 5px;
+  font-size: 13px;
+}
+
+.field-container input {
+  margin-top: 3px;
+  padding: 15px;
+  font-size: 16px;
+  width: 100%;
+  border-radius: 3px;
+  border: 1px solid #dcdcdc;
+}
+
+.ccicon {
+  height: 38px;
+  position: absolute;
+  right: 6px;
+  top: calc(50% - 17px);
+  width: 60px;
+}
+
+.formes-container button {
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+  padding: 10px;
+  border-radius: 2px;
+  border: 0;
+  background-color: $white;
+  color: $main;
+  text-align: center;
+}
+.formes-card {
+  display: none;
+}
+#cardnumber {
+  width: 50%;
+  margin-left: 107px;
+}
+
+.field-container img {
+  position: absolute;
+  top: 6px;
+  left: 90px;
+  width: 50px;
+}
