@@ -2,7 +2,27 @@ import { createElement } from '../../../helpers/helpers';
 import { IGoods } from '../../../helpers/item';
 import { infoDetail, infoDetailSmall } from './infoButton';
 
+const addProductToLocalStorage = (
+  element: HTMLElement,
+  cartItemDetails: {
+    id: number;
+    title: string;
+    src: string;
+    brand: string;
+    category: string;
+    cost: number;
+    quantity: number;
+  }
+) => {
+  element.addEventListener('click', () => {
+    const cartItems = localStorage.getItem('cart') ? JSON.parse(localStorage.getItem('cart') || '') : [];
+    const newCartItems = [...cartItems, cartItemDetails];
+    localStorage.setItem('cart', JSON.stringify(newCartItems));
+  });
+};
+
 export const addProducts = (
+  id: number,
   title: string,
   src: string,
   brand: string,
@@ -27,7 +47,8 @@ export const addProducts = (
   createElement('p', infoColumnDetails, ['info-quantity'], `Количество на складе: ${quantity}`);
 
   const infoBtn = createElement('div', productWrapper, ['info-btn']);
-  createElement('button', infoBtn, ['btn', 'btn-cart'], 'Добавить в корзину');
+  const cartButton = createElement('button', infoBtn, ['btn', 'btn-cart'], 'Добавить в корзину');
+  addProductToLocalStorage(cartButton, { id, title, src, brand, category, cost, quantity });
   createElement('button', infoBtn, ['btn', 'btn-details'], 'Информация');
   const productsInfo = document.querySelectorAll<HTMLElement>('.btn.btn-details');
 

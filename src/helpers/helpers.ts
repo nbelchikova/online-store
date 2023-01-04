@@ -23,3 +23,7 @@ export const addToQueryParams = (key: string, value: string): void => {
   url.searchParams.set(key, value);
   window.history.replaceState(null, '', url);
 };
+
+export const getWordWithEnding = (number: number, word: string): string => {
+  return number === 1 ? word : `${word}s`;
+};

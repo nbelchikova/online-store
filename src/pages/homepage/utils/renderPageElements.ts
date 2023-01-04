@@ -26,8 +26,8 @@ export const renderProducts = (): void => {
     itemSmall.classList.remove('main-size');
     itemBig.classList.remove('blue-size');
   } else {
-    searchedItemsArray.forEach(({ name, image1, brand, category, cost, warehouse }) => {
-      addProducts(name, image1, brand, category, cost, warehouse);
+    searchedItemsArray.forEach(({ id, name, image1, brand, category, cost, warehouse }) => {
+      addProducts(id, name, image1, brand, category, cost, warehouse);
     });
     itemBig.classList.add('blue-size');
     itemSmall.classList.add('main-size');
