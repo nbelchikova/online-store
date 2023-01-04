@@ -1,5 +1,6 @@
 import './goods.scss';
 import './utils/imageShow';
+import './utils/card';
 
 import { IGoods, itemsData } from '../../helpers/item';
 
