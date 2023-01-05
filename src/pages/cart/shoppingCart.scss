@@ -28,11 +28,11 @@
   align-items: center;
   margin-bottom: 20px;
   padding-top: 20px;
-  border-top: 1px solid $secondaryLight;
+  border-top: 1px solid $secondary-light;
 }
 
 .product-wrapper:last-child {
-  border-bottom: 1px solid $secondaryLight;
+  border-bottom: 1px solid $secondary-light;
   padding-bottom: 20px;
 }
 
@@ -126,7 +126,22 @@
   justify-content: space-between;
   padding: 20px 100px;
 }
-
+.promo-wrapper {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 100px;
+  border-bottom: 1px solid rgba(37, 27, 41, 0.32);
+  border-top: 1px solid rgba(37, 27, 41, 0.32);
+}
+.promo-form {
+  display: block;
+  text-align: start;
+}
+#promo-input {
+  margin-right: 100px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
 .order-button {
   background: $main;
   color: $white;
@@ -163,7 +178,7 @@
     align-items: center;
     gap: 10px;
     padding: 8px 12px;
-    border: 1px solid $secondaryLight;
+    border: 1px solid $secondary-light;
     max-width: 50px;
     cursor: pointer;
     border-radius: 4px;
@@ -204,7 +219,7 @@
       font-weight: 400;
       font-size: 14px;
       line-height: 24px;
-      color: $secondaryDark;
+      color: $secondary-dark;
       text-align: center;
       cursor: pointer;
 
@@ -219,7 +234,7 @@
     font-weight: 400;
     font-size: 14px;
     line-height: 20px;
-    color: $secondaryDark;
+    color: $secondary-dark;
   }
 
   &__secondary-text {
@@ -232,7 +247,7 @@
   &__left-arrow,
   &__right-arrow {
     cursor: pointer;
-    fill: $secondaryDark;
+    fill: $secondary-dark;
 
     &:hover {
       fill: $main;
@@ -253,6 +268,29 @@
   &__link {
     display: block;
     width: 100%;
-    color: $secondaryDark;
+    color: $secondary-dark;
   }
 }
+.promo-possible{
+  width: 300px;
+  height:100px;
+  border: 3px solid $main;
+  border-radius: 10px;
+  text-align: center;
+}
+.promo-possible h2 {
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.promo-form h2{
+  font-size: 20px;
+  color: $main;
+  margin-bottom: 10px;
+}
+.promo-info {
+  margin-bottom: 10px;
+}
+.price-discount{
+ text-decoration:line-through;
+ }
