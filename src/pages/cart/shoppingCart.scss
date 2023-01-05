@@ -126,22 +126,26 @@
   justify-content: space-between;
   padding: 20px 100px;
 }
+
 .promo-wrapper {
   display: flex;
   justify-content: space-between;
   padding: 20px 100px;
-  border-bottom: 1px solid rgba(37, 27, 41, 0.32);
-  border-top: 1px solid rgba(37, 27, 41, 0.32);
+  border-bottom: 1px solid $secondary-light;
+  border-top: 1px solid $secondary-light;
 }
+
 .promo-form {
   display: block;
   text-align: start;
 }
+
 #promo-input {
   margin-right: 100px;
   margin-top: 10px;
   margin-bottom: 20px;
 }
+
 .order-button {
   background: $main;
   color: $white;
@@ -271,26 +275,30 @@
     color: $secondary-dark;
   }
 }
-.promo-possible{
+
+.promo-possible {
   width: 300px;
-  height:100px;
+  height: 100px;
   border: 3px solid $main;
   border-radius: 10px;
   text-align: center;
 }
+
 .promo-possible h2 {
   margin-bottom: 10px;
   margin-top: 10px;
 }
 
-.promo-form h2{
+.promo-form h2 {
   font-size: 20px;
   color: $main;
   margin-bottom: 10px;
 }
+
 .promo-info {
   margin-bottom: 10px;
 }
-.price-discount{
- text-decoration:line-through;
- }
+
+.price-discount {
+  text-decoration: line-through;
+}

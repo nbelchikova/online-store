@@ -5,11 +5,11 @@ const totalPrice = document.querySelector('.total-price') as HTMLElement;
 const discountPrice = document.querySelector('.discount-price') as HTMLElement;
 const promoApply = document.querySelector('#promo-apply') as HTMLElement;
 
-const promo = function () {
+function promo() {
   if (promoInput.value === 'promo1' || promoInput.value === 'promo2' || promoInput.value === 'promo3') {
     promoInfo.textContent = `${promoInput.value}. Скидка 10%`;
   }
-};
+}
 
 promoInput.addEventListener('input', promo, false);
 
@@ -59,16 +59,16 @@ function appendPromo() {
     } else {
       for (let k = 0; k < pApply.length; k++) {
         if (pApply[k].textContent === `-${promoInput.value}. Скидка 10% (Удалить)`) {
-          return false;
+          return;
         }
       }
+
       const pPromo = document.createElement('p');
       promoApply.append(pPromo);
       pPromo.textContent = `-${promoInput.value}. Скидка 10% (Удалить)`;
       discount();
       deletePromo();
     }
-    return true;
   }
 }
 
