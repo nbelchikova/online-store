@@ -9,6 +9,7 @@
   background-color: $main;
   left: 40%;
 }
+
 .end-order-wrapper {
   position: fixed;
   display: none;
@@ -23,6 +24,7 @@
   left: 40%;
   text-align: center;
 }
+
 .formes-field {
   margin-bottom: 10px;
 }
@@ -31,7 +33,6 @@
   color: red;
   text-align: left;
   font-size: 12px;
-  display: block;
   margin-top: 3px;
   display: none;
 }
@@ -63,6 +64,7 @@ input:valid:not(:placeholder-shown) {
 input:invalid:not(:placeholder-shown) {
   border-color: red;
 }
+
 input:invalid:not(:placeholder-shown) + .forms-error {
   display: block;
 }
