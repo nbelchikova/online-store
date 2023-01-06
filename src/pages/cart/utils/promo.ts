@@ -5,8 +5,10 @@ const totalPrice = document.querySelector('.total-price') as HTMLElement;
 const discountPrice = document.querySelector('.discount-price') as HTMLElement;
 const promoApply = document.querySelector('#promo-apply') as HTMLElement;
 
+export const promocode = ['promo1', 'promo2', 'promo3'];
+
 function promo() {
-  if (promoInput.value === 'promo1' || promoInput.value === 'promo2' || promoInput.value === 'promo3') {
+  if (promocode.includes(promoInput.value)) {
     promoInfo.textContent = `${promoInput.value}. Скидка 10%`;
   }
 }
@@ -16,22 +18,14 @@ promoInput.addEventListener('input', promo, false);
 function discount() {
   const pApply = document.querySelectorAll<HTMLElement>('#promo-apply p');
 
-  if (pApply.length === 1) {
-    console.log(pApply.length);
-    discountPrice.textContent = `${Number(totalPrice.textContent?.split(' ')[0]) * 0.9} руб`;
-    totalPrice.classList.add('price-discount');
-  } else if (pApply.length === 2) {
-    console.log(pApply.length);
-    discountPrice.textContent = `${Number(totalPrice.textContent?.split(' ')[0]) * 0.8} руб`;
-    totalPrice.classList.add('price-discount');
-  } else if (pApply.length === 3) {
-    console.log(pApply.length);
-    discountPrice.textContent = `${Number(totalPrice.textContent?.split(' ')[0]) * 0.7} руб`;
-    totalPrice.classList.add('price-discount');
-  } else if (pApply.length === 0) {
-    console.log(pApply.length);
+  if (!pApply.length) {
     discountPrice.textContent = `${totalPrice.textContent}`;
     totalPrice.classList.remove('price-discount');
+  } else {
+    discountPrice.textContent = `${
+      (Number(totalPrice.textContent?.split(' ')[0]) * (100 - 10 * pApply.length)) / 100
+    } руб`;
+    totalPrice.classList.add('price-discount');
   }
 }
 
