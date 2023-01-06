@@ -94,9 +94,26 @@
         </div>
       </div>
       <div class="total-wrapper">
-        <p class="total-title">Общая сумма: <span class="total-price"></span></p>
+        <p class="total-title">Общая сумма: <span class="total-price"></span><span class="discount-price"></span></p>
         <p class="total-title">Общее кол-во товаров: <span class="total-quantity"></span></p>
         <button class="order-button">Заказать</button>
+      </div>
+      <div class="promo-wrapper">
+        <form class="promo-form">
+          <h2>Введите промокод</h2>
+          <input id="promo-input" type="text" placeholder="Введите промокод" />
+          <div class="promo-info"></div>
+          <button class="promo-button">Применить промокод</button>
+        </form>
+        <div class="promo-possible" id="promo-apply">
+          <h2>Примененные промокоды:</h2>
+        </div>
+        <div class="promo-possible">
+          <h2>Возможные промокоды:</h2>
+          <p>-promo1</p>
+          <p>-promo2</p>
+          <p>-promo3</p>
+        </div>
       </div>
     </main>
     <footer class="footer">
