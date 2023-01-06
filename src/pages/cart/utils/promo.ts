@@ -22,9 +22,8 @@ function discount() {
     discountPrice.textContent = `${totalPrice.textContent}`;
     totalPrice.classList.remove('price-discount');
   } else {
-    discountPrice.textContent = `${
-      (Number(totalPrice.textContent?.split(' ')[0]) * (100 - 10 * pApply.length)) / 100
-    } руб`;
+    const finalCost= (Number(totalPrice.textContent?.split(' ')[0]) * (100 - 10 * pApply.length)) / 100;
+    discountPrice.textContent = `${finalCost} руб`;
     totalPrice.classList.add('price-discount');
   }
 }
