@@ -1,4 +1,4 @@
-import { addToQueryParams } from '../../helpers/helpers';
+import { addToQueryParams, updateHeaderTotal } from '../../helpers/helpers';
 import './index.scss';
 import { renderPageElements } from './utils/renderPageElements';
 import { initSlider } from './utils/slider';
@@ -101,5 +101,6 @@ copyButton?.addEventListener('click', () => {
   copyButton.style.backgroundColor = 'grey';
 });
 
+updateHeaderTotal();
 initSlider();
 renderPageElements();

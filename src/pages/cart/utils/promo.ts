@@ -15,14 +15,14 @@ function promo() {
 
 promoInput.addEventListener('input', promo, false);
 
-function discount() {
+export function discount() {
   const pApply = document.querySelectorAll<HTMLElement>('#promo-apply p');
 
   if (!pApply.length) {
     discountPrice.textContent = `${totalPrice.textContent}`;
     totalPrice.classList.remove('price-discount');
   } else {
-    const finalCost= (Number(totalPrice.textContent?.split(' ')[0]) * (100 - 10 * pApply.length)) / 100;
+    const finalCost = (Number(totalPrice.textContent?.split(' ')[0]) * (100 - 10 * pApply.length)) / 100;
     discountPrice.textContent = `${finalCost} руб`;
     totalPrice.classList.add('price-discount');
   }

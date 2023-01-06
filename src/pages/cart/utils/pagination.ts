@@ -3,7 +3,6 @@ import { getItemsFromStorage } from './getItemsFromStorage';
 import { renderCartItems } from './renderCartItems';
 
 const ITEMS_PER_PAGE = 3;
-const ITEMS_NUMBER = getItemsFromStorage().length;
 const itemsNumberInfo = document.querySelector('.pagination__secondary-text') as HTMLElement;
 const page = document.querySelector('#page') as HTMLElement;
 const pageNumber = document.querySelector('#page-number') as HTMLElement;
@@ -15,6 +14,7 @@ const pageOptions = document.querySelector('#page-options') as HTMLElement;
 let pagesNumberValue: number;
 
 const updateShowingItemsNumber = () => {
+  const ITEMS_NUMBER = getItemsFromStorage().length;
   const productsWrapper = document.querySelector('.products-in-cart') as HTMLElement;
 
   let pageValue = +page?.innerText;
@@ -67,6 +67,7 @@ const updateShowingItemsNumber = () => {
 };
 
 export const paginationInit = (): void => {
+  const ITEMS_NUMBER = getItemsFromStorage().length;
   const currentUrl = new URLSearchParams(window.location.search);
   const pageParam = currentUrl.get('page');
   const choosePage = pageParam || 1;

@@ -1,16 +1,30 @@
 import { addCartItem } from './addCartItems';
 import { getItemsFromStorage } from './getItemsFromStorage';
+import { updateTotal } from './updateTotal';
 
-const totalSum = document.querySelector('.total-price') as HTMLElement;
-const totalQuantity = document.querySelector('.total-quantity') as HTMLElement;
+const main = document.querySelector('.main') as HTMLElement;
 
 export const renderCartItems = (firstItem: number, lastItem: number): void => {
   const itemsWithQuantity = getItemsFromStorage();
   const itemsForRender = itemsWithQuantity.slice(firstItem - 1, lastItem);
+  const productsWrapper = document.querySelector('.products-in-cart') as HTMLElement;
 
-  itemsForRender.forEach(([itemDetails, quantity]) => {
+  productsWrapper.innerHTML = '';
+
+  if (!itemsForRender.length) {
+    main.innerHTML = '';
+    main.insertAdjacentHTML(
+      'beforeend',
+      `<div class='empty-cart'>
+        <p>Здесь пока ничего нет :(</p>
+        <img src="/christmas-wreath-2300222.png">
+      </div>`
+    );
+  }
+
+  itemsForRender.forEach(([itemDetails, quantity], index) => {
     if (itemDetails) {
-      addCartItem(itemDetails, quantity);
+      addCartItem(itemDetails, quantity, firstItem + index);
     }
   });
 
@@ -26,6 +40,5 @@ export const renderCartItems = (firstItem: number, lastItem: number): void => {
     return sum + quantity;
   }, 0);
 
-  totalSum.innerHTML = `${total} руб.`;
-  totalQuantity.innerHTML = `${totalQuantitySum} шт.`;
+  updateTotal(total, totalQuantitySum);
 };

@@ -39,6 +39,14 @@ html {
   z-index: 10;
 }
 
+.btn-cart {
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.85;
+  }
+}
+
 .shop {
   display: flex;
   margin: 0 auto;
@@ -48,7 +56,7 @@ html {
 .shop-filter {
   width: 370px;
   border: 2px solid $main;
-  height: 550px;
+  height: 600px;
   margin-right: 30px;
   border-radius: 10px;
   padding-left: 20px;
@@ -91,6 +99,11 @@ html {
   text-align: center;
   border: $main;
   height: 20px;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.85;
+  }
 }
 
 .btn-good {
@@ -241,6 +254,10 @@ html {
 .shop-items-header {
   display: flex;
   flex-direction: column;
+}
+
+.btn-remove {
+  background-color: $secondary-light;
 }
 
 .range-slider {

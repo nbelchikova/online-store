@@ -1,77 +1,102 @@
-import { createElement } from '../../../helpers/helpers';
+import { addEventListenerToCartProduct, createElement, isProductInCart } from '../../../helpers/helpers';
 import { IGoods } from '../../../helpers/item';
 import { infoDetail, infoDetailSmall } from './infoButton';
 
-const addProductToLocalStorage = (
-  element: HTMLElement,
-  cartItemDetails: {
-    id: number;
-    title: string;
-    src: string;
-    brand: string;
-    category: string;
-    cost: number;
-    quantity: number;
-  }
-) => {
-  element.addEventListener('click', () => {
-    const cartItems = localStorage.getItem('cart') ? JSON.parse(localStorage.getItem('cart') || '') : [];
-    const newCartItems = [...cartItems, cartItemDetails];
-    localStorage.setItem('cart', JSON.stringify(newCartItems));
-  });
-};
-
-export const addProducts = (
-  id: number,
-  title: string,
-  src: string,
-  brand: string,
-  category: string,
-  cost: number,
-  quantity: number
-): void => {
+export const addProducts = ({
+  id,
+  name,
+  brand,
+  category,
+  description,
+  image1,
+  image2,
+  cost,
+  warehouse,
+}: IGoods): void => {
   const productsWrapper = document.querySelector('.good-items') as HTMLElement;
   const productWrapper = createElement('div', productsWrapper, ['good-items-info']);
-  createElement('h3', productWrapper, ['info-title'], title);
+  createElement('h3', productWrapper, ['info-title'], name);
   const infoColumn = createElement('div', productWrapper, ['info-column']);
   const imageWrapper = createElement('div', infoColumn, ['info-column-image']);
 
   const image = document.createElement('img');
-  image.src = src;
+  image.src = image1;
   imageWrapper.appendChild(image);
 
   const infoColumnDetails = createElement('div', infoColumn, ['info-column-details']);
   createElement('p', infoColumnDetails, ['info-brand'], `Брэнд: ${brand}`);
   createElement('p', infoColumnDetails, ['info-category'], `Категория: ${category}`);
   createElement('p', infoColumnDetails, ['info-cost'], `Цена (в рублях): ${cost}`);
-  createElement('p', infoColumnDetails, ['info-quantity'], `Количество на складе: ${quantity}`);
+  createElement('p', infoColumnDetails, ['info-quantity'], `Количество на складе: ${warehouse}`);
 
   const infoBtn = createElement('div', productWrapper, ['info-btn']);
-  const cartButton = createElement('button', infoBtn, ['btn', 'btn-cart'], 'Добавить в корзину');
-  addProductToLocalStorage(cartButton, { id, title, src, brand, category, cost, quantity });
+  const cartButtonText = isProductInCart(id) ? 'Удалить из корзины' : 'Добавить в корзину';
+  const cartButton = createElement('button', infoBtn, ['btn', 'btn-cart'], cartButtonText);
+  addEventListenerToCartProduct(cartButton, {
+    id,
+    name,
+    image1,
+    image2,
+    brand,
+    category,
+    cost,
+    warehouse,
+    description,
+  });
   createElement('button', infoBtn, ['btn', 'btn-details'], 'Информация');
   const productsInfo = document.querySelectorAll<HTMLElement>('.btn.btn-details');
+
+  if (cartButtonText === 'Удалить из корзины') {
+    cartButton.classList.add('btn-remove');
+  }
 
   for (let g = 0; g < productsInfo.length; g++) {
     productsInfo[g].addEventListener('click', infoDetail);
   }
 };
 
-export const addProductsSmall = (title: string, src: string): void => {
+export const addProductsSmall = ({
+  id,
+  name,
+  brand,
+  category,
+  description,
+  image1,
+  image2,
+  cost,
+  warehouse,
+}: IGoods): void => {
   const productsWrapper = document.querySelector('.good-items') as HTMLElement;
   const productWrapper = createElement('div', productsWrapper, ['good-items-info2']);
-  createElement('h3', productWrapper, ['info-title2'], title);
+  createElement('h3', productWrapper, ['info-title2'], name);
   const infoColumn = createElement('div', productWrapper, ['info-column2']);
   const imageWrapper = createElement('div', infoColumn, ['info-column-image2']);
 
   const image = document.createElement('img');
-  image.src = src;
+  image.src = image1;
   imageWrapper.appendChild(image);
 
   const infoBtn = createElement('div', productWrapper, ['info-btn-good']);
-  createElement('button', infoBtn, ['btn-good', 'btn-cart'], 'Добавить в корзину');
+  const cartButtonText = isProductInCart(id) ? 'Удалить из корзины' : 'Добавить в корзину';
+
+  const cartButton = createElement('button', infoBtn, ['btn-good', 'btn-cart'], cartButtonText);
+  addEventListenerToCartProduct(cartButton, {
+    id,
+    name,
+    image1,
+    image2,
+    brand,
+    category,
+    cost,
+    warehouse,
+    description,
+  });
   createElement('button', infoBtn, ['btn-good', 'btn-details'], 'Информация');
   const productsInfo2 = document.querySelectorAll<HTMLElement>('.btn-good.btn-details');
+
+  if (cartButtonText === 'Удалить из корзины') {
+    cartButton.classList.add('btn-remove');
+  }
 
   for (let g = 0; g < productsInfo2.length; g++) {
     productsInfo2[g].addEventListener('click', infoDetailSmall);

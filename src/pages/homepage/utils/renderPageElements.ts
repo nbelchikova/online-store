@@ -18,16 +18,16 @@ export const renderProducts = (): void => {
   productsWrapper.innerHTML = '';
 
   if (viewParam === 'small') {
-    searchedItemsArray.forEach(({ name, image1 }) => {
-      addProductsSmall(name, image1);
+    searchedItemsArray.forEach(itemDetails => {
+      addProductsSmall(itemDetails);
     });
     itemSmall.classList.add('blue-size');
     itemBig.classList.add('main-size');
     itemSmall.classList.remove('main-size');
     itemBig.classList.remove('blue-size');
   } else {
-    searchedItemsArray.forEach(({ id, name, image1, brand, category, cost, warehouse }) => {
-      addProducts(id, name, image1, brand, category, cost, warehouse);
+    searchedItemsArray.forEach(itemDetails => {
+      addProducts(itemDetails);
     });
     itemBig.classList.add('blue-size');
     itemSmall.classList.add('main-size');

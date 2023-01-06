@@ -5,8 +5,8 @@ export function smallSize(items: IGoods[]): void {
   const productsWrapper = document.querySelector('.good-items') as HTMLElement;
   productsWrapper.innerHTML = '';
 
-  items.forEach(({ name, image1 }) => {
-    addProductsSmall(name, image1);
+  items.forEach(itemDetails => {
+    addProductsSmall(itemDetails);
   });
 }
 
@@ -14,7 +14,7 @@ export function bigSize(items: IGoods[]): void {
   const productsWrapper = document.querySelector('.good-items') as HTMLElement;
   productsWrapper.innerHTML = '';
 
-  items.forEach(({ id, name, image1, brand, category, cost, warehouse }) => {
-    addProducts(id, name, image1, brand, category, cost, warehouse);
+  items.forEach(itemDetails => {
+    addProducts(itemDetails);
   });
 }
