@@ -80,6 +80,11 @@
   border-radius: 10px;
   border: $main 1px solid;
   height: 50px;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.85;
+  }
 }
 
 .path {
@@ -92,4 +97,8 @@
   font-size: 30px;
   font-size: $main;
   text-decoration: none;
+}
+
+.btn-remove {
+  background-color: $secondary-light;
 }

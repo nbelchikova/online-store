@@ -28,6 +28,11 @@
     }
   }
 
+  &-total {
+    font-size: 24px;
+    color: $white;
+  }
+
   &-cart {
     position: relative;
     z-index: 11;

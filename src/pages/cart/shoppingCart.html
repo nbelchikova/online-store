@@ -15,105 +15,110 @@
 
   <body>
     <header class="header">
-      <div class="header-logo">
+      <a class="header-logo" href="/index.html">
         <img class="header-logo-image" src="./header/christmas-ball.png" alt="christmas-ball" />
-      </div>
-      <p class="header-logo-text">Online shop</p>
-      <div class="header-cart">
+        <p class="header-logo-text">Online shop</p>
+      </a>
+      <p class="header-total">Общая сумма: 300 руб.</p>
+      <a class="header-cart" href="/shoppingCart.html">
         <img class="header-cart-image" src="./header/cart.png" alt="christmas-cart" />
         <div class="header-cart-quantity">1</div>
-      </div>
+      </a>
     </header>
     <main class="main">
-      <div class="products-in-cart">
-        <p class="cart-title">Cart</p>
-      </div>
-      <div class="pagination-wrapper">
-        <div class="pagination">
-          <div class="pagination__select">
-            <p id="page" class="pagination__selected">1</p>
-            <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M1 1L5 5L9 1" stroke="black" stroke-linecap="round" stroke-linejoin="round" />
-            </svg>
-            <ul class="pagination__options-wrapper" id="page-options">
-              <li class="pagination__option">1</li>
-              <li class="pagination__option">2</li>
-              <li class="pagination__option">3</li>
-              <li class="pagination__option">4</li>
-              <li class="pagination__option">5</li>
-            </ul>
+      <div>
+        <div class="products-in-cart">
+          <p class="cart-title">Cart</p>
+        </div>
+        <div class="pagination-wrapper">
+          <div class="pagination">
+            <div class="pagination__select">
+              <p id="page" class="pagination__selected">1</p>
+              <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1 1L5 5L9 1" stroke="black" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+              <ul class="pagination__options-wrapper" id="page-options">
+                <li class="pagination__option">1</li>
+                <li class="pagination__option">2</li>
+                <li class="pagination__option">3</li>
+                <li class="pagination__option">4</li>
+                <li class="pagination__option">5</li>
+              </ul>
+            </div>
+            <p class="pagination__text" id="page-number">of 5 pages</p>
+            <div>
+              <svg
+                class="pagination__left-arrow"
+                width="32"
+                height="36"
+                viewBox="0 0 32 36"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M17.8241 13.2646L13.4485 17.9999L17.8241 22.7352C18.0586 22.9891 18.0586 23.3995 17.8241 23.6533C17.5895 23.9072 17.2103 23.9072 16.9757 23.6533L12.1759 18.459C11.9414 18.2051 11.9414 17.7947 12.1759 17.5409L16.9757 12.3465C17.0927 12.2199 17.2463 12.1562 17.3999 12.1562C17.5535 12.1562 17.7071 12.2199 17.8241 12.3465C18.0586 12.6004 18.0586 13.0107 17.8241 13.2646Z"
+                />
+              </svg>
+              <svg
+                class="pagination__right-arrow"
+                width="32"
+                height="36"
+                viewBox="0 0 32 36"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M14.1759 13.1083L18.5515 17.8437L14.1759 22.579C13.9414 22.8329 13.9414 23.2432 14.1759 23.4971C14.4105 23.751 14.7897 23.751 15.0243 23.4971L19.8241 18.3027C20.0586 18.0488 20.0586 17.6385 19.8241 17.3846L15.0243 12.1902C14.9073 12.0636 14.7537 12 14.6001 12C14.4465 12 14.2929 12.0636 14.1759 12.1902C13.9414 12.4441 13.9414 12.8545 14.1759 13.1083Z"
+                />
+              </svg>
+            </div>
           </div>
-          <p class="pagination__text" id="page-number">of 5 pages</p>
-          <div>
-            <svg
-              class="pagination__left-arrow"
-              width="32"
-              height="36"
-              viewBox="0 0 32 36"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                fill-rule="evenodd"
-                clip-rule="evenodd"
-                d="M17.8241 13.2646L13.4485 17.9999L17.8241 22.7352C18.0586 22.9891 18.0586 23.3995 17.8241 23.6533C17.5895 23.9072 17.2103 23.9072 16.9757 23.6533L12.1759 18.459C11.9414 18.2051 11.9414 17.7947 12.1759 17.5409L16.9757 12.3465C17.0927 12.2199 17.2463 12.1562 17.3999 12.1562C17.5535 12.1562 17.7071 12.2199 17.8241 12.3465C18.0586 12.6004 18.0586 13.0107 17.8241 13.2646Z"
-              />
-            </svg>
-            <svg
-              class="pagination__right-arrow"
-              width="32"
-              height="36"
-              viewBox="0 0 32 36"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                fill-rule="evenodd"
-                clip-rule="evenodd"
-                d="M14.1759 13.1083L18.5515 17.8437L14.1759 22.579C13.9414 22.8329 13.9414 23.2432 14.1759 23.4971C14.4105 23.751 14.7897 23.751 15.0243 23.4971L19.8241 18.3027C20.0586 18.0488 20.0586 17.6385 19.8241 17.3846L15.0243 12.1902C14.9073 12.0636 14.7537 12 14.6001 12C14.4465 12 14.2929 12.0636 14.1759 12.1902C13.9414 12.4441 13.9414 12.8545 14.1759 13.1083Z"
-              />
-            </svg>
+          <div class="pagination">
+            <p class="pagination__text">Items per page</p>
+            <div class="pagination__select">
+              <p id="items-per-page" class="pagination__selected">5</p>
+              <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1 1L5 5L9 1" stroke="black" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+              <ul class="pagination__options-wrapper">
+                <li class="pagination__option">1</li>
+                <li class="pagination__option">2</li>
+                <li class="pagination__option">3</li>
+                <li class="pagination__option">4</li>
+                <li class="pagination__option">5</li>
+              </ul>
+            </div>
+            <p class="pagination__secondary-text">Showing 1-5 of 10 items</p>
           </div>
         </div>
-        <div class="pagination">
-          <p class="pagination__text">Items per page</p>
-          <div class="pagination__select">
-            <p id="items-per-page" class="pagination__selected">5</p>
-            <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M1 1L5 5L9 1" stroke="black" stroke-linecap="round" stroke-linejoin="round" />
-            </svg>
-            <ul class="pagination__options-wrapper">
-              <li class="pagination__option">1</li>
-              <li class="pagination__option">2</li>
-              <li class="pagination__option">3</li>
-              <li class="pagination__option">4</li>
-              <li class="pagination__option">5</li>
-            </ul>
-          </div>
-          <p class="pagination__secondary-text">Showing 1-5 of 10 items</p>
-        </div>
       </div>
-      <div class="total-wrapper">
-        <p class="total-title">Общая сумма: <span class="total-price"></span><span class="discount-price"></span></p>
-        <p class="total-title">Общее кол-во товаров: <span class="total-quantity"></span></p>
+      <div class="total-information">
+        <div class="total-wrapper">
+          <p class="total-title">Общая сумма: <span class="total-price"></span><span class="discount-price"></span></p>
+          <p class="total-title">Общее кол-во товаров: <span class="total-quantity"></span></p>
+        </div>
+        <div class="promo-wrapper">
+          <form class="promo-form">
+            <h2>Введите промокод</h2>
+            <input id="promo-input" type="text" placeholder="Введите промокод" />
+            <div class="promo-info"></div>
+            <button class="promo-button">Применить промокод</button>
+          </form>
+          <div class="promo-possible" id="promo-apply">
+            <h2>Примененные промокоды:</h2>
+          </div>
+          <div class="promo-possible">
+            <h2>Возможные промокоды:</h2>
+            <p>-promo1</p>
+            <p>-promo2</p>
+            <p>-promo3</p>
+          </div>
+        </div>
         <button class="order-button">Заказать</button>
-      </div>
-      <div class="promo-wrapper">
-        <form class="promo-form">
-          <h2>Введите промокод</h2>
-          <input id="promo-input" type="text" placeholder="Введите промокод" />
-          <div class="promo-info"></div>
-          <button class="promo-button">Применить промокод</button>
-        </form>
-        <div class="promo-possible" id="promo-apply">
-          <h2>Примененные промокоды:</h2>
-        </div>
-        <div class="promo-possible">
-          <h2>Возможные промокоды:</h2>
-          <p>-promo1</p>
-          <p>-promo2</p>
-          <p>-promo3</p>
-        </div>
       </div>
     </main>
     <footer class="footer">

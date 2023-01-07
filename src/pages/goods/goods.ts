@@ -3,8 +3,9 @@ import './utils/imageShow';
 import './utils/card';
 
 import { IGoods, itemsData } from '../../helpers/item';
+import { addEventListenerToCartProduct, isProductInCart } from '../../helpers/helpers';
 
-export function Goodcart(items: IGoods[]) {
+export function Goodcart(items: IGoods[]): void {
   const idLocal = localStorage.getItem('id');
   const currentProduct = items[Number(idLocal) - 1];
   const cardTitle = document.querySelector('.card-title') as HTMLElement;
@@ -18,7 +19,10 @@ export function Goodcart(items: IGoods[]) {
   const storeCategory = document.querySelector('.store-category') as HTMLElement;
   const storeBrand = document.querySelector('.store-brand') as HTMLElement;
   const storeName = document.querySelector('.store-name') as HTMLElement;
-  cardTitle.textContent = currentProduct.name;
+  const addToCartButton = document.querySelector('.btn-cart') as HTMLElement;
+  const cartButtonText = isProductInCart(currentProduct.id) ? 'Удалить из корзины' : 'Добавить в корзину';
+  addEventListenerToCartProduct(addToCartButton, currentProduct);
+  cardTitle.innerText = currentProduct.name;
   imgBig.src = `${currentProduct.image1}`;
   imgSmall1.src = `${currentProduct.image1}`;
   imgSmall2.src = `${currentProduct.image2}`;
@@ -29,6 +33,11 @@ export function Goodcart(items: IGoods[]) {
   storeCategory.textContent = `${currentProduct.category}`;
   storeBrand.textContent = `${currentProduct.brand}`;
   storeName.innerText = currentProduct.name;
+  addToCartButton.innerText = cartButtonText;
+
+  if (cartButtonText === 'Удалить из корзины') {
+    addToCartButton.classList.add('btn-remove');
+  }
 }
 
 Goodcart(itemsData);
@@ -46,7 +55,7 @@ const currentUrl = new URLSearchParams(window.location.search);
 const idLocal = currentUrl.get('good');
 const currentProduct = itemsData[Number(idLocal) - 1];
 
-export function GoodcartLink(items: IGoods[]) {
+export function GoodcartLink(): void {
   const cardTitle = document.querySelector('.card-title') as HTMLElement;
   const imgBig = document.querySelector('.card-image-big') as HTMLImageElement;
   const imgSmall1 = document.querySelector('.card-image-small-1') as HTMLImageElement;
@@ -71,4 +80,4 @@ export function GoodcartLink(items: IGoods[]) {
   storeName.innerText = currentProduct.name;
 }
 
-GoodcartLink(itemsData);
+GoodcartLink();

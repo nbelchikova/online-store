@@ -2,6 +2,8 @@
 
 .main {
   margin: 100px auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
 }
 
 .short-cart-button-wrapper {
@@ -127,8 +129,16 @@
   padding: 20px 100px;
 }
 
+.empty-cart {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
 .promo-wrapper {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   padding: 20px 100px;
   border-bottom: 1px solid $secondary-light;

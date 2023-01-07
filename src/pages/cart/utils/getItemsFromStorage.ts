@@ -1,8 +1,7 @@
-import { CartItemDetails } from './addCartItems';
+import { IGoods } from '../../../helpers/item';
 
-const itemsInCart: CartItemDetails[] = JSON.parse(localStorage.getItem('cart') || '') || [];
-
-export const getItemsFromStorage = (): [CartItemDetails | undefined, number][] => {
+export const getItemsFromStorage = (): [IGoods | undefined, number][] => {
+  const itemsInCart: IGoods[] = localStorage.getItem('cart') ? JSON.parse(localStorage.getItem('cart') || '') : [];
   const numberOfItems = itemsInCart.reduce<Record<number, number>>((acc, curr) => {
     return acc[curr.id] ? { ...acc, [curr.id]: acc[curr.id] + 1 } : { ...acc, [curr.id]: 1 };
   }, {});
