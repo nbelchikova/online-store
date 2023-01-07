@@ -1,5 +1,5 @@
-const promoInput = document.querySelector('#promo-input') as HTMLInputElement;
-const promoInfo = document.querySelector('.promo-info') as HTMLElement;
+export const promoInput = document.querySelector('#promo-input') as HTMLInputElement;
+export const promoInfo = document.querySelector('.promo-info') as HTMLElement;
 const formesPromo = document.querySelector('.promo-form') as HTMLElement;
 const totalPrice = document.querySelector('.total-price') as HTMLElement;
 const discountPrice = document.querySelector('.discount-price') as HTMLElement;
@@ -7,7 +7,7 @@ const promoApply = document.querySelector('#promo-apply') as HTMLElement;
 
 export const promocode = ['promo1', 'promo2', 'promo3'];
 
-function promo() {
+export function promo() {
   if (promocode.includes(promoInput.value)) {
     promoInfo.textContent = `${promoInput.value}. Скидка 10%`;
   }
