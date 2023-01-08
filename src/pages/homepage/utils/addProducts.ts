@@ -50,9 +50,7 @@ export const addProducts = ({
     cartButton.classList.add('btn-remove');
   }
 
-  for (let g = 0; g < productsInfo.length; g++) {
-    productsInfo[g].addEventListener('click', infoDetail);
-  }
+  infoDetail();
 };
 
 export const addProductsSmall = ({
@@ -98,9 +96,7 @@ export const addProductsSmall = ({
     cartButton.classList.add('btn-remove');
   }
 
-  for (let g = 0; g < productsInfo2.length; g++) {
-    productsInfo2[g].addEventListener('click', infoDetailSmall);
-  }
+  infoDetailSmall();
 };
 
 export const createFilterItem = (
