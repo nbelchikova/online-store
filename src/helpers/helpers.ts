@@ -1,5 +1,5 @@
 import { IGoods } from './item';
-import { routeCart} from '../helpers/routes';
+import { routeCart } from './routes';
 
 export const createElement = (
   elementType: string,
@@ -81,6 +81,7 @@ export const addEventListenerToCartProduct = (element: HTMLElement, item: IGoods
       element.classList.toggle('btn-remove');
       updateHeaderTotal();
     }
+
     localStorage.removeItem('block');
   });
 };

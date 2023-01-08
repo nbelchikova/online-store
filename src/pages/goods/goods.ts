@@ -3,7 +3,11 @@ import './utils/imageShow';
 import './utils/card';
 
 import { IGoods, itemsData } from '../../helpers/item';
-import { addEventListenerToCartProduct, isProductInCart, addEventListenerToCartProductNow } from '../../helpers/helpers';
+import {
+  addEventListenerToCartProduct,
+  isProductInCart,
+  addEventListenerToCartProductNow,
+} from '../../helpers/helpers';
 
 export function Goodcart(items: IGoods[]): void {
   const idLocal = localStorage.getItem('id');
@@ -41,6 +45,7 @@ export function Goodcart(items: IGoods[]): void {
   if (cartButtonText === 'Удалить из корзины') {
     addToCartButton.classList.add('btn-remove');
   }
+
   if (cartButtonTextNow === 'Удалить из корзины') {
     btnNow.classList.add('btn-remove');
   }
@@ -87,4 +92,3 @@ export function GoodcartLink(): void {
 }
 
 GoodcartLink();
-

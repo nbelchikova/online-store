@@ -1,9 +1,9 @@
-import type {Config} from 'jest';
+import type { Config } from 'jest';
 
 const config: Config = {
-  preset: "ts-jest",
+  preset: 'ts-jest',
   verbose: true,
-  testEnvironment: 'jsdom'
+  testEnvironment: 'jsdom',
 };
 
 export default config;

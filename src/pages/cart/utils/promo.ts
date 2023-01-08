@@ -1,5 +1,7 @@
 export const promoInput = document.querySelector('#promo-input') as HTMLInputElement;
+
 export const promoInfo = document.querySelector('.promo-info') as HTMLElement;
+
 const formesPromo = document.querySelector('.promo-form') as HTMLElement;
 const totalPrice = document.querySelector('.total-price') as HTMLElement;
 const discountPrice = document.querySelector('.discount-price') as HTMLElement;
