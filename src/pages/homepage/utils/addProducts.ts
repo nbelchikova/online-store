@@ -44,7 +44,6 @@ export const addProducts = ({
     description,
   });
   createElement('button', infoBtn, ['btn', 'btn-details'], 'Информация');
-  const productsInfo = document.querySelectorAll<HTMLElement>('.btn.btn-details');
 
   if (cartButtonText === 'Удалить из корзины') {
     cartButton.classList.add('btn-remove');
@@ -90,7 +89,6 @@ export const addProductsSmall = ({
     description,
   });
   createElement('button', infoBtn, ['btn-good', 'btn-details'], 'Информация');
-  const productsInfo2 = document.querySelectorAll<HTMLElement>('.btn-good.btn-details');
 
   if (cartButtonText === 'Удалить из корзины') {
     cartButton.classList.add('btn-remove');
