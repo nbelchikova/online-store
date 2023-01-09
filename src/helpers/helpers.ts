@@ -86,20 +86,3 @@ export const addEventListenerToCartProduct = (element: HTMLElement, item: IGoods
   });
 };
 
-export const addEventListenerToCartProductNow = (element: HTMLElement, item: IGoods): void => {
-  element.addEventListener('click', () => {
-    if (element.innerText === 'Добавить в корзину') {
-      addProductToCart(item);
-      element.innerText = 'Удалить из корзины';
-      element.classList.toggle('btn-remove');
-      updateHeaderTotal();
-    } else {
-      removeProductFromCart(item);
-      element.innerText = 'Добавить в корзину';
-      element.classList.toggle('btn-remove');
-      updateHeaderTotal();
-      window.location.href = routeCart;
-      localStorage.setItem('block', 'block');
-    }
-  });
-};

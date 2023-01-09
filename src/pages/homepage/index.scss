@@ -236,7 +236,20 @@ html {
   margin-top: 20px;
 }
 
-.items-quantity-small,
+.items-quantity-small{
+  width: 80px;
+  height: 80px;
+  background-color: $main;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.65;
+  }
+}
+
 .items-quantity-big {
   width: 80px;
   height: 80px;
@@ -449,7 +462,7 @@ div.range-slider > input[type='range'] {
   }
 
   .blue-size {
-    background-color: $blue;
+    background-color: black;
   }
 
   .main-size {
