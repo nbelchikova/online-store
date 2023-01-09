@@ -6,12 +6,14 @@ const main = document.querySelector('.main') as HTMLElement;
 
 export const renderCartItems = (firstItem: number, lastItem: number): void => {
   const itemsWithQuantity = getItemsFromStorage();
+  console.log(itemsWithQuantity, firstItem, lastItem);
+
   const itemsForRender = itemsWithQuantity.slice(firstItem - 1, lastItem);
   const productsWrapper = document.querySelector('.products-in-cart') as HTMLElement;
 
   productsWrapper.innerHTML = '';
 
-  if (!itemsForRender.length) {
+  if (!itemsWithQuantity.length) {
     main.innerHTML = '';
     main.insertAdjacentHTML(
       'beforeend',

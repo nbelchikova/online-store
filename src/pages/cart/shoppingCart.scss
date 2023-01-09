@@ -152,6 +152,7 @@
   border-top: 1px solid $secondary-light;
   padding: 20px 0;
   gap: 10px;
+  align-items: center;
 }
 
 .promo-form {
@@ -229,7 +230,7 @@
       bottom: -8px;
       transform: translateY(100%);
       left: 0;
-      z-index: 2;
+      z-index: 10;
       background-color: $white;
       max-height: 82px;
       overflow-y: scroll;
