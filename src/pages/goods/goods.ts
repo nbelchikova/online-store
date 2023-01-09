@@ -8,9 +8,8 @@ import {
   addEventListenerToCartProduct,
   isProductInCart,
   updateHeaderTotal,
-
-  addToQueryParams,
-
+  addProductToCart,
+  addToQueryParams
 } from '../../helpers/helpers';
 
 export function Goodcart(items: IGoods[]): void {
@@ -58,10 +57,7 @@ export function Goodcart(items: IGoods[]): void {
   }
 
 
-  if (cartButtonTextNow === 'Удалить из корзины') {
-    btnNow.classList.add('btn-remove');
-  }
-
+  
   if (currentID) {
     addToQueryParams('id', currentID);
   }
