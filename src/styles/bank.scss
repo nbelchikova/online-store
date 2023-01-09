@@ -32,7 +32,7 @@
   position: fixed;
   top: 200px;
   left: 40%;
-  display: grid;
+  display: block;
   grid-column-gap: 10px;
   grid-template: 'name name' 'number number' 'expiration security' / auto auto / 90px 90px 90px;
   max-width: 400px;

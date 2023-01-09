@@ -1,6 +1,6 @@
 import { IGoods } from '../../../helpers/item';
 
-const choose = document.querySelector('#choose') as HTMLInputElement;
+export const choose = document.querySelector('#choose') as HTMLInputElement;
 
 export function itemSearch(items: IGoods[]): IGoods[] {
   const currentUrl = new URLSearchParams(window.location.search);

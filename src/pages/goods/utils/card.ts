@@ -15,9 +15,9 @@ const goToCard = function (event: SubmitEvent) {
 formes.addEventListener('submit', goToCard, false);
 
 // card
-const dateExp = document.querySelector('#expirationdate') as HTMLInputElement;
+export const dateExp = document.querySelector('#expirationdate') as HTMLInputElement;
 
-const modifyInput = function () {
+export const modifyInput = function () {
   if (dateExp.value.length === 2) dateExp.value += '/';
   else if (dateExp.value.length === 3 && dateExp.value.charAt(2) === '/')
     dateExp.value = dateExp.value.replace('/', '');
