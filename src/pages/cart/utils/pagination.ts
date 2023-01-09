@@ -19,21 +19,22 @@ const updateShowingItemsNumber = () => {
 
   let pageValue = +page?.innerText;
 
-  if (pageValue > pagesNumberValue) {
-    page.innerText = String(pagesNumberValue);
-    pageValue = +page?.innerText;
-  }
-
   const itemsPerPageValue = +itemsPerPage?.innerText;
-  const currentPageFirstItem = +(pageValue * itemsPerPageValue - (itemsPerPageValue - 1));
+  pagesNumberValue = Math.ceil(ITEMS_NUMBER / itemsPerPageValue);
+  const pageForItems = itemsPerPageValue > pagesNumberValue ? pagesNumberValue : itemsPerPageValue;
+  const currentPageFirstItem = +(pageForItems * itemsPerPageValue - (itemsPerPageValue - 1));
   const currentPageLastItem =
     currentPageFirstItem + (itemsPerPageValue - 1) <= ITEMS_NUMBER
       ? currentPageFirstItem + (itemsPerPageValue - 1)
       : ITEMS_NUMBER;
-  pagesNumberValue = Math.ceil(ITEMS_NUMBER / itemsPerPageValue);
 
   productsWrapper.innerHTML = '';
   renderCartItems(currentPageFirstItem, currentPageLastItem);
+
+  if (pageValue > pagesNumberValue) {
+    page.innerText = String(pagesNumberValue);
+    pageValue = +page?.innerText;
+  }
 
   addToQueryParams('page', String(pageValue));
   addToQueryParams('items-per-page', String(itemsPerPageValue));
