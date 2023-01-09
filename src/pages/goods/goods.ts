@@ -9,7 +9,7 @@ import {
   isProductInCart,
   updateHeaderTotal,
   addProductToCart,
-  addToQueryParams
+  addToQueryParams,
 } from '../../helpers/helpers';
 
 export function Goodcart(items: IGoods[]): void {
@@ -56,12 +56,9 @@ export function Goodcart(items: IGoods[]): void {
     addToCartButton.classList.add('btn-remove');
   }
 
-
-  
   if (currentID) {
     addToQueryParams('id', currentID);
   }
-
 }
 
 Goodcart(itemsData);
