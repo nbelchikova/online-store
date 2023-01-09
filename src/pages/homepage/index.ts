@@ -98,7 +98,10 @@ copyButton?.addEventListener('click', () => {
   copytext.select();
   document.execCommand('copy');
   document.body.removeChild(copytext);
-  copyButton.style.backgroundColor = 'grey';
+  copyButton.innerText = 'Скопировано!';
+  setTimeout(() => {
+    copyButton.innerText = 'Копировать';
+  }, 1000);
 });
 
 updateHeaderTotal();
