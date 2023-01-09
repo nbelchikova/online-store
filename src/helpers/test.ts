@@ -1,5 +1,5 @@
 import { itemsData } from './item';
-import { routeGood, routeMain, routeCart} from '../helpers/routes';
+import { routeGood, routeMain, routeCart } from './routes';
 
 test('1-First value for itemsData', () => {
   expect(itemsData[0].id).toBe(1);

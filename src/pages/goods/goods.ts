@@ -7,6 +7,7 @@ import {
   addEventListenerToCartProduct,
   isProductInCart,
   addEventListenerToCartProductNow,
+  updateHeaderTotal,
 } from '../../helpers/helpers';
 
 export function Goodcart(items: IGoods[]): void {
@@ -52,6 +53,7 @@ export function Goodcart(items: IGoods[]): void {
 }
 
 Goodcart(itemsData);
+updateHeaderTotal();
 
 export const addToQueryParams2 = (key: string, value: string): void => {
   const url = new URL(window.location.href);

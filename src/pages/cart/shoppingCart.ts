@@ -2,8 +2,10 @@ import './shoppingCart.scss';
 import { paginationInit } from './utils/pagination';
 import './utils/promo';
 import '../goods/utils/card';
+import { updateHeaderTotal } from '../../helpers/helpers';
 
 paginationInit();
+updateHeaderTotal();
 
 const formes = document.querySelector('.formes') as HTMLElement;
 formes.style.display = 'none';

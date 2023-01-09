@@ -11,14 +11,13 @@ export const addCartItem = (itemDetails: IGoods, quantity: number, itemNumber: n
   <div class="product-wrapper">
         <div class="products-details" id=details-of-${itemDetails.id}>
           <div>
-            <p class="product-name">${itemNumber}</p>
-            <p class="product-name">${itemDetails.name}</p>
-            <p class="product-name">${itemDetails.category}</p>
-            <p class="product-warehouse">
+            <p class="product-name">${itemNumber}. ${itemDetails.name}</p>
+            <p class="product-info">Категория: ${itemDetails.category}</p>
+            <p class="product-info">
             Остаток на складе: ${itemDetails.warehouse} шт.
             </p>
-            <p class="product-price">
-            ${itemDetails.cost} руб.
+            <p class="product-info">
+            Сумма: ${itemDetails.cost} руб.
             </p>
 
           </div>
@@ -50,6 +49,7 @@ export const addCartItem = (itemDetails: IGoods, quantity: number, itemNumber: n
   counterWrapper?.appendChild(minusButton);
 
   const totalPrice = document.createElement('p');
+  totalPrice.classList.add('product-info');
   totalPrice.innerText = `Общая сумма: ${itemDetails.cost * quantity}  руб.`;
   productDetails?.appendChild(totalPrice);
 

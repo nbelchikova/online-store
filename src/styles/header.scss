@@ -37,6 +37,10 @@
     position: relative;
     z-index: 11;
 
+    &:hover {
+      opacity: 0.85;
+    }
+
     &-image {
       width: 80px;
     }
