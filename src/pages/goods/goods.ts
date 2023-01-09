@@ -8,7 +8,7 @@ import {
   addEventListenerToCartProduct,
   isProductInCart,
   updateHeaderTotal,
-  addProductToCart
+  addProductToCart,
 } from '../../helpers/helpers';
 
 export function Goodcart(items: IGoods[]): void {
@@ -51,7 +51,6 @@ export function Goodcart(items: IGoods[]): void {
   if (cartButtonText === 'Удалить из корзины') {
     addToCartButton.classList.add('btn-remove');
   }
-
 }
 
 Goodcart(itemsData);

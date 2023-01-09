@@ -85,4 +85,3 @@ export const addEventListenerToCartProduct = (element: HTMLElement, item: IGoods
     localStorage.removeItem('block');
   });
 };
-
