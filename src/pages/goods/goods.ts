@@ -8,12 +8,17 @@ import {
   addEventListenerToCartProduct,
   isProductInCart,
   updateHeaderTotal,
-  addProductToCart,
+
+  addToQueryParams,
+
 } from '../../helpers/helpers';
 
 export function Goodcart(items: IGoods[]): void {
+  const url = new URLSearchParams(window.location.search);
+  const id = url.get('id');
   const idLocal = localStorage.getItem('id');
-  const currentProduct = items[Number(idLocal) - 1];
+  const currentID = id || idLocal;
+  const currentProduct = items[Number(currentID) - 1];
   const cardTitle = document.querySelector('.card-title') as HTMLElement;
   const imgBig = document.querySelector('.card-image-big') as HTMLImageElement;
   const imgSmall1 = document.querySelector('.card-image-small-1') as HTMLImageElement;
@@ -51,6 +56,16 @@ export function Goodcart(items: IGoods[]): void {
   if (cartButtonText === 'Удалить из корзины') {
     addToCartButton.classList.add('btn-remove');
   }
+
+
+  if (cartButtonTextNow === 'Удалить из корзины') {
+    btnNow.classList.add('btn-remove');
+  }
+
+  if (currentID) {
+    addToQueryParams('id', currentID);
+  }
+
 }
 
 Goodcart(itemsData);
