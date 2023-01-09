@@ -55,18 +55,14 @@ select?.addEventListener('change', e => {
 itemSmall?.addEventListener('click', () => {
   addToQueryParams('view', 'small');
   renderPageElements();
-  itemSmall.classList.add('blue-size');
-  itemBig.classList.add('main-size');
-  itemSmall.classList.remove('main-size');
-  itemBig.classList.remove('blue-size');
+  itemSmall.style.backgroundColor = 'blue';
+  itemBig.style.backgroundColor = '#36b0cb';
 });
 itemBig?.addEventListener('click', () => {
   addToQueryParams('view', 'big');
   renderPageElements();
-  itemBig.classList.add('blue-size');
-  itemSmall.classList.add('main-size');
-  itemSmall.classList.remove('blue-size');
-  itemBig.classList.remove('main-size');
+  itemBig.style.backgroundColor = 'blue';
+  itemSmall.style.backgroundColor = '#36b0cb';
 });
 costSliderLeftInput?.addEventListener('change', () => {
   addToQueryParams('price', `${costMinValueWrapper?.innerText}-${costMaxValueWrapper?.innerText}`);
@@ -107,3 +103,18 @@ copyButton?.addEventListener('click', () => {
 updateHeaderTotal();
 initSlider();
 renderPageElements();
+
+function sizeParamFunc() {
+  const currentUrl = new URLSearchParams(window.location.search);
+  const sizeParam = currentUrl.get('view');
+
+  if (sizeParam === 'small') {
+    itemSmall.style.backgroundColor = 'blue';
+    itemBig.style.backgroundColor = '#36b0cb';
+  } else {
+    itemBig.style.backgroundColor = 'blue';
+    itemSmall.style.backgroundColor = '#36b0cb';
+  }
+}
+
+sizeParamFunc();

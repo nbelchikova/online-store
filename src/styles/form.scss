@@ -68,3 +68,11 @@ input:invalid:not(:placeholder-shown) {
 input:invalid:not(:placeholder-shown) + .forms-error {
   display: block;
 }
+
+.btn-close,
+.btn-close-container {
+  position: absolute;
+  right: 30px;
+  top: 0;
+  color: $white;
+}

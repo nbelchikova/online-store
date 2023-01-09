@@ -3,12 +3,14 @@ import './utils/imageShow';
 import './utils/card';
 
 import { IGoods, itemsData } from '../../helpers/item';
+import { routeCart } from '../../helpers/routes';
 import {
   addEventListenerToCartProduct,
   isProductInCart,
-  addEventListenerToCartProductNow,
   updateHeaderTotal,
+
   addToQueryParams,
+
 } from '../../helpers/helpers';
 
 export function Goodcart(items: IGoods[]): void {
@@ -32,8 +34,12 @@ export function Goodcart(items: IGoods[]): void {
   const cartButtonText = isProductInCart(currentProduct.id) ? 'Удалить из корзины' : 'Добавить в корзину';
   addEventListenerToCartProduct(addToCartButton, currentProduct);
   const btnNow = document.querySelector('.btn-now') as HTMLElement;
-  const cartButtonTextNow = isProductInCart(currentProduct.id) ? 'Удалить из корзины' : 'Добавить в корзину';
-  addEventListenerToCartProductNow(btnNow, currentProduct);
+  btnNow.addEventListener('click', () => {
+    addProductToCart(currentProduct);
+    window.location.href = routeCart;
+    updateHeaderTotal();
+    localStorage.setItem('block', 'block');
+  });
   cardTitle.innerText = currentProduct.name;
   imgBig.src = `${currentProduct.image1}`;
   imgSmall1.src = `${currentProduct.image1}`;
@@ -51,6 +57,7 @@ export function Goodcart(items: IGoods[]): void {
     addToCartButton.classList.add('btn-remove');
   }
 
+
   if (cartButtonTextNow === 'Удалить из корзины') {
     btnNow.classList.add('btn-remove');
   }
@@ -58,6 +65,7 @@ export function Goodcart(items: IGoods[]): void {
   if (currentID) {
     addToQueryParams('id', currentID);
   }
+
 }
 
 Goodcart(itemsData);

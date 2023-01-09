@@ -14,6 +14,15 @@ export function infoDetail(): void {
       localStorage.setItem('id', String(itemsFinal[0].id));
       window.location.href = routeGood;
     });
+
+    infoTitle[g].addEventListener('click', () => {
+      const findParam = infoTitle[g].innerText;
+      const itemsFinal = findParam
+        ? itemsData.filter(item => Object.values(item).some(el => String(el).includes(findParam)))
+        : itemsData;
+      localStorage.setItem('id', String(itemsFinal[0].id));
+      window.location.href = routeGood;
+    });
   }
 }
 
